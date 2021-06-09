@@ -1,0 +1,6 @@
+###### install and env setup
+
+Enter cloned pangolin repo: cd pangolin
+While in this repo, run: conda env create -f environment.yml
+Then: conda activate pangolin
+Finally: pip install .

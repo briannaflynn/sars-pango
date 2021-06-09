@@ -1,0 +1,9 @@
+###### nextstrain install and env
+
+Create conda env: conda create -n nextstrain -c conda-forge -c bioconda \
+  augur auspice nextstrain-cli nextalign snakemake awscli git pip
+
+Activate and confirm install worked: conda activate nextstrain
+nextstrain check-setup --set-default
+
+Output should say: Setting default environment to native.
