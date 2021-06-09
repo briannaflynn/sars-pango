@@ -5,13 +5,14 @@ import toytree
 import toyplot
 import json
 import toyplot.pdf
+import sys
 
 print(toytree.__version__)
 print(toyplot.__version__)
 print(np.__version__)
 
-sars = "/content/tree.nwk"
-jso = "/content/clades.json"
+sars = sys.argv[1]
+jso = sys.argv[2]
 
 def get_clade_dict(json_path, tree):
 
@@ -74,7 +75,6 @@ tre1 = toytree.tree(sars, tree_format=1)
 clade_dict = get_clade_dict(jso, tre1)
 
 c_uni = list(np.unique(np.array(list(clade_dict.values()))))
-c_uni
 
 emap = get_emap(clade_dict, c_uni)
 
