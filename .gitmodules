@@ -1,3 +1,6 @@
 [submodule "pangolin"]
 	path = pangolin
 	url = https://github.com/cov-lineages/pangolin.git
+[submodule "pango-next"]
+	path = pango-next
+	url = https://github.com/briannaflynn/pango-next.git
