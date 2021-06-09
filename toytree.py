@@ -7,10 +7,6 @@ import json
 import toyplot.pdf
 import sys
 
-print(toytree.__version__)
-print(toyplot.__version__)
-print(np.__version__)
-
 sars = sys.argv[1]
 jso = sys.argv[2]
 
