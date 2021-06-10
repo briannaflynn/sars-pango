@@ -6,13 +6,12 @@ import toytree
 import toyplot
 import json
 import toyplot.pdf
+import sys
 
-print(toytree.__version__)
-print(toyplot.__version__)
-print(np.__version__)
-
-sars = "/content/tree.nwk"
-jso = "/content/clades.json"
+# first arg is the tree file in .nwk format, produced in the pango-next/results/global dir
+sars = sys.argv[1]
+# second arg is the clades.json, also produced in the pango-next/results/global dir
+jso = sys.argv[2]
 
 def get_clade_dict(json_path, tree):
 
