@@ -80,6 +80,5 @@ tre1 = toytree.tree(sars, tree_format=1)
 clade_dict = get_clade_dict(jso, tre1)
 c_uni = list(np.unique(np.array(list(clade_dict.values()))))
 emap = get_emap(clade_dict, c_uni, color_list = ['#BBF6F8', '#F8D2BB', '#c3c6f7','#d6d6d6', '#b9fade', '#FF0000'])
-names = names_generator(clade_dict, sampleName = 'Greece/209_33926/2020')
+names = names_generator(clade_dict)
 j = get_figure(tre1, emap, tip_labels = names)
-
