@@ -1,2 +1,0 @@
-taxon,lineage,conflict,ambiguity_score,scorpio_call,scorpio_support,scorpio_conflict,version,pangolin_version,pangoLEARN_version,pango_version,status,note
-NC_045512.2_Severe_acute_respiratory_syndrome_coronavirus_2_isolate_Wuhan-Hu-1__complete_genome,B.1.1.7,0.0,1.0,Alpha (B.1.1.7-like),0.782600,0.130400,PLEARN-v1.2.6,3.0.5,2021-05-27,v1.2.6,passed_qc,scorpio call: Alt alleles 18; Ref alleles 3; Amb alleles 0
