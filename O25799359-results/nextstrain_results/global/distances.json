@@ -1,0 +1,795 @@
+{
+  "generated_by": {
+    "program": "augur",
+    "version": "12.0.0"
+  },
+  "nodes": {
+    "Australia/VIC1008/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1018/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC102/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC1038/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1045/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1048/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1062/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1120/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1135/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1139/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1175/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1186/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1199/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1208/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC1251/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC14/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC259/2020": {
+      "S1_mutations": 2
+    },
+    "Australia/VIC319/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC329/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC330/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC380/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC385/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC413/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC534/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC549/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC734/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC767/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC797/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC800/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC803/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC82/2020": {
+      "S1_mutations": 0
+    },
+    "Australia/VIC824/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC851/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC92/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC969/2020": {
+      "S1_mutations": 1
+    },
+    "Australia/VIC970/2020": {
+      "S1_mutations": 0
+    },
+    "China/Beijing_IME-BJ05/2020": {
+      "S1_mutations": 1
+    },
+    "China/WHUHnCoV020/2020": {
+      "S1_mutations": 0
+    },
+    "China/Wuhan_YB012611/2020": {
+      "S1_mutations": 0
+    },
+    "ENV/USA/UF-11/2020": {
+      "S1_mutations": 0
+    },
+    "France/10006HC/2020": {
+      "S1_mutations": 1
+    },
+    "France/10015BY/2020": {
+      "S1_mutations": 1
+    },
+    "France/10023FD/2020": {
+      "S1_mutations": 2
+    },
+    "France/10041MR/2020": {
+      "S1_mutations": 0
+    },
+    "France/10045DZ/2020": {
+      "S1_mutations": 1
+    },
+    "France/10060KV/2020": {
+      "S1_mutations": 0
+    },
+    "France/10068ND/2020": {
+      "S1_mutations": 1
+    },
+    "France/10078MA/2020": {
+      "S1_mutations": 1
+    },
+    "France/40003KA/2020": {
+      "S1_mutations": 1
+    },
+    "France/50001AR/2020": {
+      "S1_mutations": 2
+    },
+    "Germany/BavPat1-ChVir929/2020": {
+      "S1_mutations": 1
+    },
+    "Germany/BavPat3-ChVir1020/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/139_32716/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/222_33921/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/226_35576/2020": {
+      "S1_mutations": 0
+    },
+    "Greece/227_35969/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/246_32206/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/248_32261/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/259_31928/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/37_35684/2020": {
+      "S1_mutations": 1
+    },
+    "Greece/41_36861/2020": {
+      "S1_mutations": 1
+    },
+    "Guam/GU-NHG-01/2020": {
+      "S1_mutations": 0
+    },
+    "Hangzhou/HZ-1/2020": {
+      "S1_mutations": 0
+    },
+    "India/GBRC14/2020": {
+      "S1_mutations": 0
+    },
+    "India/GBRC20/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC21/2020": {
+      "S1_mutations": 2
+    },
+    "India/GBRC26/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC29/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC51/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC56a/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC8/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC85/2020": {
+      "S1_mutations": 2
+    },
+    "India/GBRC88a/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC9/2020": {
+      "S1_mutations": 1
+    },
+    "India/GBRC96/2020": {
+      "S1_mutations": 0
+    },
+    "India/GBRC97a/2020": {
+      "S1_mutations": 1
+    },
+    "India/GMC-KP1125/2020": {
+      "S1_mutations": 1
+    },
+    "India/GMCKN318/2020": {
+      "S1_mutations": 1
+    },
+    "India/GMCTC469/2020": {
+      "S1_mutations": 1
+    },
+    "India/nimh-2873/2020": {
+      "S1_mutations": 0
+    },
+    "India/nimh-3952/2020": {
+      "S1_mutations": 1
+    },
+    "Iran/HGRC-1.1-IPI-8206/2020": {
+      "S1_mutations": 0
+    },
+    "Jamaica/JM-CDC-7286/2020": {
+      "S1_mutations": 1
+    },
+    "Japan/P4-6/2020": {
+      "S1_mutations": 1
+    },
+    "Malaysia/189332/2020": {
+      "S1_mutations": 0
+    },
+    "NODE_0000000": {
+      "S1_mutations": 0
+    },
+    "NODE_0000006": {
+      "S1_mutations": 0
+    },
+    "NODE_0000008": {
+      "S1_mutations": 0
+    },
+    "NODE_0000009": {
+      "S1_mutations": 0
+    },
+    "NODE_0000010": {
+      "S1_mutations": 0
+    },
+    "NODE_0000011": {
+      "S1_mutations": 0
+    },
+    "NODE_0000012": {
+      "S1_mutations": 0
+    },
+    "NODE_0000013": {
+      "S1_mutations": 0
+    },
+    "NODE_0000014": {
+      "S1_mutations": 0
+    },
+    "NODE_0000017": {
+      "S1_mutations": 0
+    },
+    "NODE_0000018": {
+      "S1_mutations": 0
+    },
+    "NODE_0000019": {
+      "S1_mutations": 0
+    },
+    "NODE_0000020": {
+      "S1_mutations": 0
+    },
+    "NODE_0000021": {
+      "S1_mutations": 0
+    },
+    "NODE_0000022": {
+      "S1_mutations": 0
+    },
+    "NODE_0000025": {
+      "S1_mutations": 0
+    },
+    "NODE_0000026": {
+      "S1_mutations": 0
+    },
+    "NODE_0000027": {
+      "S1_mutations": 0
+    },
+    "NODE_0000028": {
+      "S1_mutations": 0
+    },
+    "NODE_0000029": {
+      "S1_mutations": 0
+    },
+    "NODE_0000030": {
+      "S1_mutations": 0
+    },
+    "NODE_0000031": {
+      "S1_mutations": 0
+    },
+    "NODE_0000032": {
+      "S1_mutations": 0
+    },
+    "NODE_0000033": {
+      "S1_mutations": 0
+    },
+    "NODE_0000034": {
+      "S1_mutations": 0
+    },
+    "NODE_0000035": {
+      "S1_mutations": 0
+    },
+    "NODE_0000036": {
+      "S1_mutations": 0
+    },
+    "NODE_0000037": {
+      "S1_mutations": 0
+    },
+    "NODE_0000038": {
+      "S1_mutations": 0
+    },
+    "NODE_0000039": {
+      "S1_mutations": 0
+    },
+    "NODE_0000040": {
+      "S1_mutations": 0
+    },
+    "NODE_0000041": {
+      "S1_mutations": 0
+    },
+    "NODE_0000042": {
+      "S1_mutations": 0
+    },
+    "NODE_0000043": {
+      "S1_mutations": 0
+    },
+    "NODE_0000044": {
+      "S1_mutations": 1
+    },
+    "NODE_0000045": {
+      "S1_mutations": 0
+    },
+    "NODE_0000046": {
+      "S1_mutations": 0
+    },
+    "NODE_0000052": {
+      "S1_mutations": 1
+    },
+    "NODE_0000053": {
+      "S1_mutations": 1
+    },
+    "NODE_0000054": {
+      "S1_mutations": 1
+    },
+    "NODE_0000055": {
+      "S1_mutations": 1
+    },
+    "NODE_0000056": {
+      "S1_mutations": 1
+    },
+    "NODE_0000057": {
+      "S1_mutations": 1
+    },
+    "NODE_0000058": {
+      "S1_mutations": 1
+    },
+    "NODE_0000059": {
+      "S1_mutations": 1
+    },
+    "NODE_0000060": {
+      "S1_mutations": 1
+    },
+    "NODE_0000061": {
+      "S1_mutations": 1
+    },
+    "NODE_0000062": {
+      "S1_mutations": 1
+    },
+    "NODE_0000063": {
+      "S1_mutations": 1
+    },
+    "NODE_0000064": {
+      "S1_mutations": 1
+    },
+    "NODE_0000065": {
+      "S1_mutations": 1
+    },
+    "NODE_0000066": {
+      "S1_mutations": 1
+    },
+    "NODE_0000067": {
+      "S1_mutations": 1
+    },
+    "NODE_0000068": {
+      "S1_mutations": 1
+    },
+    "NODE_0000069": {
+      "S1_mutations": 2
+    },
+    "NODE_0000070": {
+      "S1_mutations": 1
+    },
+    "NODE_0000071": {
+      "S1_mutations": 1
+    },
+    "NODE_0000074": {
+      "S1_mutations": 1
+    },
+    "NODE_0000075": {
+      "S1_mutations": 1
+    },
+    "NODE_0000076": {
+      "S1_mutations": 1
+    },
+    "NODE_0000077": {
+      "S1_mutations": 1
+    },
+    "NODE_0000078": {
+      "S1_mutations": 1
+    },
+    "NODE_0000079": {
+      "S1_mutations": 1
+    },
+    "NODE_0000080": {
+      "S1_mutations": 1
+    },
+    "NODE_0000081": {
+      "S1_mutations": 1
+    },
+    "NODE_0000082": {
+      "S1_mutations": 1
+    },
+    "NODE_0000086": {
+      "S1_mutations": 1
+    },
+    "NODE_0000087": {
+      "S1_mutations": 1
+    },
+    "NODE_0000088": {
+      "S1_mutations": 1
+    },
+    "NODE_0000089": {
+      "S1_mutations": 1
+    },
+    "NODE_0000091": {
+      "S1_mutations": 1
+    },
+    "NODE_0000092": {
+      "S1_mutations": 1
+    },
+    "NODE_0000093": {
+      "S1_mutations": 1
+    },
+    "NODE_0000094": {
+      "S1_mutations": 1
+    },
+    "NODE_0000095": {
+      "S1_mutations": 1
+    },
+    "NODE_0000096": {
+      "S1_mutations": 1
+    },
+    "NODE_0000098": {
+      "S1_mutations": 1
+    },
+    "NODE_0000100": {
+      "S1_mutations": 1
+    },
+    "NODE_0000102": {
+      "S1_mutations": 1
+    },
+    "NODE_0000103": {
+      "S1_mutations": 1
+    },
+    "NODE_0000104": {
+      "S1_mutations": 1
+    },
+    "NODE_0000105": {
+      "S1_mutations": 1
+    },
+    "NODE_0000106": {
+      "S1_mutations": 1
+    },
+    "NODE_0000107": {
+      "S1_mutations": 1
+    },
+    "NODE_0000108": {
+      "S1_mutations": 1
+    },
+    "NODE_0000109": {
+      "S1_mutations": 1
+    },
+    "NODE_0000110": {
+      "S1_mutations": 1
+    },
+    "NODE_0000111": {
+      "S1_mutations": 1
+    },
+    "NODE_0000113": {
+      "S1_mutations": 1
+    },
+    "NODE_0000114": {
+      "S1_mutations": 1
+    },
+    "NODE_0000115": {
+      "S1_mutations": 1
+    },
+    "NODE_0000117": {
+      "S1_mutations": 1
+    },
+    "NODE_0000118": {
+      "S1_mutations": 1
+    },
+    "NODE_0000119": {
+      "S1_mutations": 1
+    },
+    "NODE_0000120": {
+      "S1_mutations": 1
+    },
+    "NODE_0000121": {
+      "S1_mutations": 1
+    },
+    "NODE_0000122": {
+      "S1_mutations": 1
+    },
+    "NODE_0000123": {
+      "S1_mutations": 1
+    },
+    "NODE_0000124": {
+      "S1_mutations": 1
+    },
+    "NODE_0000125": {
+      "S1_mutations": 1
+    },
+    "NODE_0000126": {
+      "S1_mutations": 1
+    },
+    "NODE_0000127": {
+      "S1_mutations": 1
+    },
+    "NODE_0000128": {
+      "S1_mutations": 1
+    },
+    "NODE_0000133": {
+      "S1_mutations": 1
+    },
+    "NODE_0000138": {
+      "S1_mutations": 1
+    },
+    "NODE_0000140": {
+      "S1_mutations": 1
+    },
+    "NODE_0000148": {
+      "S1_mutations": 1
+    },
+    "NODE_0000149": {
+      "S1_mutations": 0
+    },
+    "Spain/Valencia002/2020": {
+      "S1_mutations": 0
+    },
+    "Spain/Valencia003/2020": {
+      "S1_mutations": 0
+    },
+    "Spain/Valencia22/2020": {
+      "S1_mutations": 0
+    },
+    "Spain/Valencia8/2020": {
+      "S1_mutations": 0
+    },
+    "SriLanka/COV38/2020": {
+      "S1_mutations": 0
+    },
+    "Taiwan/CGMH-CGU-07/2020": {
+      "S1_mutations": 0
+    },
+    "Thailand/SI200615-NT/2020": {
+      "S1_mutations": 0
+    },
+    "Thailand/SI204487-NT/2020": {
+      "S1_mutations": 0
+    },
+    "Thailand/SI204512-NT/2020": {
+      "S1_mutations": 1
+    },
+    "Thailand/SI204514-NT/2020": {
+      "S1_mutations": 0
+    },
+    "USA/AK178/2020": {
+      "S1_mutations": 1
+    },
+    "USA/CA-CDPH-UC28/2020": {
+      "S1_mutations": 0
+    },
+    "USA/CA-CZB-1033/2020": {
+      "S1_mutations": 0
+    },
+    "USA/CA-CZB-1045/2020": {
+      "S1_mutations": 0
+    },
+    "USA/CA-CZB-1092/2020": {
+      "S1_mutations": 0
+    },
+    "USA/CA-CZB-1114/2020": {
+      "S1_mutations": 0
+    },
+    "USA/CA-CZB-1136/2020": {
+      "S1_mutations": 1
+    },
+    "USA/CA-CZB0137/2020": {
+      "S1_mutations": 1
+    },
+    "USA/CT-UW-5773/2020": {
+      "S1_mutations": 1
+    },
+    "USA/CT-UW423/2020": {
+      "S1_mutations": 0
+    },
+    "USA/FL_5125/2020": {
+      "S1_mutations": 1
+    },
+    "USA/GA_2742/2020": {
+      "S1_mutations": 1
+    },
+    "USA/ID-UW-6472/2020": {
+      "S1_mutations": 1
+    },
+    "USA/LA-BIE-072/2020": {
+      "S1_mutations": 1
+    },
+    "USA/MI-MDHHS-SC20169/2020": {
+      "S1_mutations": 1
+    },
+    "USA/MI-MDHHS-SC20252/2020": {
+      "S1_mutations": 1
+    },
+    "USA/MI-MDHHS-SC20284/2020": {
+      "S1_mutations": 1
+    },
+    "USA/NY-PV08138/2020": {
+      "S1_mutations": 1
+    },
+    "USA/NY-PV08455/2020": {
+      "S1_mutations": 1
+    },
+    "USA/NY-PV09044/2020": {
+      "S1_mutations": 1
+    },
+    "USA/NY-PV09143/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0053/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0067/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0077/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0115/2020": {
+      "S1_mutations": 2
+    },
+    "USA/VA-DCLS-0120/2020": {
+      "S1_mutations": 2
+    },
+    "USA/VA-DCLS-0185/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0188/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0197/2020": {
+      "S1_mutations": 1
+    },
+    "USA/VA-DCLS-0199/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-NH17/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA-UW-1319/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-3889/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-3900/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA-UW-4549/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-5025/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-5166/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-5756/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW-604/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA-UW249/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA-UW286/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA-UW337/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WA1/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA4-UW2/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WA_5030/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WI-UW-266/2020": {
+      "S1_mutations": 0
+    },
+    "USA/WI-UW-351/2020": {
+      "S1_mutations": 1
+    },
+    "USA/WI-UW-360/2020": {
+      "S1_mutations": 1
+    },
+    "Uruguay/Mdeo-1/2020": {
+      "S1_mutations": 0
+    },
+    "Vietnam/nCoV-19-02S/2020": {
+      "S1_mutations": 0
+    },
+    "Wuhan/Hu-1/2019": {
+      "S1_mutations": 0
+    },
+    "Wuhan/IPBCAMS-WH-03/2019": {
+      "S1_mutations": 0
+    },
+    "Wuhan/WH01/2019": {
+      "S1_mutations": 0
+    },
+    "mink/Netherlands/NB01_01KS/2020": {
+      "S1_mutations": 1
+    },
+    "mink/Netherlands/NB02_06KS/2020": {
+      "S1_mutations": 2
+    }
+  },
+  "params": {
+    "attribute": [
+      "S1_mutations"
+    ],
+    "compare_to": [
+      "root"
+    ],
+    "earliest_date": null,
+    "latest_date": null,
+    "map_name": [
+      "S1"
+    ]
+  }
+}
