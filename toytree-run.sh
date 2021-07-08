@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source /Users/brie/anaconda3/etc/profile.d/conda.sh
+source $2/etc/profile.d/conda.sh
 conda activate bioinformatics
 
 python tree-maker.py $1-results/tree/tree_raw.nwk $1-results/tree/clades.json

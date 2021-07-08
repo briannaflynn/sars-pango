@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /Users/brie/anaconda3/etc/profile.d/conda.sh
+source $2/etc/profile.d/conda.sh
 conda activate nextstrain
 
 cd pango-next; pwd

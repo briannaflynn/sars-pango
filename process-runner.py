@@ -30,11 +30,11 @@ def bioinformatix(*args):
 		raise
 	return process.stdout
         
-def pangolin(args):
+def pangolin(*args):
 
 	b = os.path.abspath('pango.sh')
 	trun = 'bash ' + b
-	cmd = [trun] + [args]
+	cmd = [trun] + [*args]
 		
 	try:
 		process = run(cmd)
@@ -43,11 +43,11 @@ def pangolin(args):
 		raise
 	return process.stdout
     
-def clade(args):
+def clade(*args):
 
 	b = os.path.abspath('get_clades.sh')
 	trun = 'bash ' + b
-	cmd = [trun] + [args]
+	cmd = [trun] + [*args]
 		
 	try:
 		process = run(cmd)
@@ -56,11 +56,11 @@ def clade(args):
 		raise
 	return process.stdout        
 
-def nextstrain(args):
+def nextstrain(*args):
 
 	b = os.path.abspath('nextstrain.sh')
 	trun = 'bash ' + b
-	cmd = [trun] + [args]
+	cmd = [trun] + [*args]
 		
 	try:
 		process = run(cmd)
@@ -82,11 +82,11 @@ def cleanup(args):
 		raise
 	return process.stdout
 	
-def toytree(args):
+def toytree(*args):
 
 	b = os.path.abspath('toytree-run.sh')
 	trun = 'bash ' + b
-	cmd = [trun] + [args]
+	cmd = [trun] + [*args]
 		
 	try:
 		process = run(cmd)
@@ -95,11 +95,11 @@ def toytree(args):
 		raise
 	return process.stdout	
 	
-def worldmap(args):
+def worldmap(*args):
 
 	b = os.path.abspath('map-figure.sh')
 	trun = 'bash ' + b
-	cmd = [trun] + [args]
+	cmd = [trun] + [*args]
 		
 	try:
 		process = run(cmd)
@@ -108,56 +108,54 @@ def worldmap(args):
 		raise
 	return process.stdout	
 		
-	
-	
-def full_run(id, f1, f2):
+def full_run(id, f1, f2, conda):
 
 	print("\nStarting full pipeline run ...")
 	time.sleep(5)
-	
-	if f1 and f2 != None:
-	
-		print("\nBeginning bioinformatics pipeline\n")
-		bioinformatix(id, f1, f2)
-		
-	else:
-		
-		raise ValueError("Missing fastq file input! Please provide two (paired) fastq files.")
-	
-	time.sleep(3)
-	print("\nStarting pangolin analysis ...\n")
-	pangolin(id)
-	
+# 	
+# 	if f1 and f2 != None:
+# 	
+# 		print("\nBeginning bioinformatics pipeline\n")
+# 		bioinformatix(id, f1, f2, conda)
+# 		
+# 	else:
+# 		
+# 		raise ValueError("Missing fastq file input! Please provide two (paired) fastq files.")
+# 	
+# 	time.sleep(3)
+# 	print("\nStarting pangolin analysis ...\n")
+# 	pangolin(id, conda)
+# 	
 	time.sleep(4)
 	print("\nExtracting virus clade ...")
-	clade(id)
+	clade(id, conda)
 	
 	print("\nBeginning nextstrain pipeline\nHeads up! This may take awhile ...")
 	
-	time.sleep(4)
-	nextstrain(id)
-	print("\nNextstrain pipeline completed!")
-	
-	print("\nCleaning up ...\n")
-	cleanup(id)
-	time.sleep(1)
+# 	time.sleep(4)
+# 	nextstrain(id, conda)
+# 	print("\nNextstrain pipeline completed!")
+# 	
+# 	print("\nCleaning up ...\n")
+# 	cleanup(id)
+# 	time.sleep(1)
 	
 	print("Done!\n")
 	
-def visualizer(id):
+def visualizer(id, conda):
 	
-# 	print("\nStarting visualization: Phylogeneitcs ...")
-# 	time.sleep(3)
-# 	
-# 	toytree(id)
+	print("\nStarting visualization: Phylogeneitcs ...")
+	time.sleep(3)
+	
+	toytree(id, conda)
 	loc = str(id)
-# 	
-# 	print("\nTree pdf now available: " + loc + "-results/tree/tree-plot.pdf")
+	
+	print("\nTree pdf now available: " + loc + "-results/tree/tree-plot.pdf")
 	
 	print("\nStarting visualization: World Map ...")
 	time.sleep(3)
 	
-	worldmap(id)
+	worldmap(id, conda)
 	print("\nWorld map pdf now available: " + loc + "-results/map.pdf")
 	
 	 
@@ -169,13 +167,14 @@ if __name__ == "__main__":
 	
 	requiredNamed = parser.add_argument_group('required named arguments')
 	requiredNamed.add_argument('--id', action='store', type=str, required = True, help ='Unique name used to label all files')
-	
+	requiredNamed.add_argument('--conda_path', action = 'store', type = str, required = True, help = 'Path to anaconda directory required. Eg. /Users/name/anaconda3. To locate your conda path, type `which conda` on your terminal, and copy the path up until `anaconda` or `anaconda3`.')
 	args = parser.parse_args()
 	fastq_1 = args.f1
 	fastq_2 = args.f2
 	id = args.id
+	conda = args.conda_path
 	
-# 	full_run(id, fastq_1, fastq_2)	
+	full_run(id, fastq_1, fastq_2, conda)	
 	
-	visualizer(id)
+# 	visualizer(id, conda)
 	

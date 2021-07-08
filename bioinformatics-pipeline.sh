@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /Users/brie/anaconda3/etc/profile.d/conda.sh
+source $4/etc/profile.d/conda.sh
 conda activate bioinformatics
 
 # trim raw fastq data
