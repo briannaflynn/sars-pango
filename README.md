@@ -26,3 +26,26 @@ required named arguments:
                         until `anaconda` or `anaconda3`.
 
 If using Linux, please see note within the commented portion of fasta-prep.sh
+
+to update the pango-next submodule, follow these steps:
+``` 
+cd pango-next
+
+git pull origin master
+
+cd ../; git status
+
+if submodule updated, will see:
+
+# Not currently on any branch.
+# Changed but not updated:
+#   (use "git add ..." to update what will be committed)
+#   (use "git checkout -- ..." to discard changes in working directory)
+#
+#       modified:   pango-next (new commits)
+
+Then run:
+
+git add pango-next
+
+git commit -m "update submodule commit message"
