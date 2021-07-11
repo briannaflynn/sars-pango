@@ -1,11 +1,9 @@
 #!/usr/bin/bash
 
+source $2/etc/profile.d/conda.sh
 conda activate bioinformatics
-#uncommment if you do not have toytree installed
-#pip install toytree
 
-# specificy the tree.nwk and clades.json file paths as the first and second positional arguments
-tree = $1
-clades = $2
+python tree-maker.py $1-results/tree/tree_raw.nwk $1-results/tree/clades.json
 
-python toytree.py tree clades
+echo "If successful tree pdf now available: $1-results/tree/tree-plot.pdf"
+mv tree-plot.pdf $1-results/tree/
