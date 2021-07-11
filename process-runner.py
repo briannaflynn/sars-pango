@@ -124,22 +124,22 @@ def full_run(id, f1, f2, conda):
 	print("\nStarting full pipeline run ...")
 	time.sleep(5)
 	
-	# if f1 and f2 != None:
-# 	
-# 		print("\nBeginning bioinformatics pipeline\n")
-# 		bioinformatix(id, f1, f2, conda)
-# 		
-# 	else:
-# 		
-# 		raise ValueError("Missing fastq file input! Please provide two (paired) fastq files.")
-# 	
-# 	time.sleep(3)
-# 	print("\nStarting pangolin analysis ...\n")
-# 	pangolin(id, conda)
-#  	
-# 	time.sleep(4)
-# 	print("\nExtracting virus clade ...")
-# 	clade(id, conda)
+	if f1 and f2 != None:
+	
+		print("\nBeginning bioinformatics pipeline\n")
+		bioinformatix(id, f1, f2, conda)
+		
+	else:
+		
+		raise ValueError("Missing fastq file input! Please provide two (paired) fastq files.")
+	
+	time.sleep(3)
+	print("\nStarting pangolin analysis ...\n")
+	pangolin(id, conda)
+ 	
+	time.sleep(4)
+	print("\nExtracting virus clade ...")
+	clade(id, conda)
 	
 	print("\nBeginning nextstrain pipeline\nHeads up! This may take awhile ...")
 	
@@ -147,9 +147,9 @@ def full_run(id, f1, f2, conda):
 	nextstrain(id, conda)
 	print("\nNextstrain pipeline completed!")
 	
-# 	print("\nCleaning up ...\n")
-# 	cleanup(id)
-# 	time.sleep(1)
+	print("\nCleaning up ...\n")
+	cleanup(id)
+	time.sleep(1)
 	
 	print("Done!\n")
 	
@@ -184,9 +184,9 @@ if __name__ == "__main__":
 	
 	full_run(id, fastq_1, fastq_2, conda)	
 	
-	# try:
-# 		visualizer(id, conda)
-# 	except FileNotFoundError:
-# 		print(f"tree_raw.nwk and clades.json files not found in the expected directory ({id}-results/tree). Check Nextstrain error log and search within directory for these files.")
-# 	
-# 	
+	try:
+		visualizer(id, conda)
+	except FileNotFoundError:
+		print(f"tree_raw.nwk and clades.json files not found in the expected directory ({id}-results/tree). Check Nextstrain error log and search within directory for these files.")
+	
+	
