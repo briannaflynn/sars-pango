@@ -25,4 +25,4 @@ required named arguments:
                         `which conda` on your terminal, and copy the path up
                         until `anaconda` or `anaconda3`.
 
-Overall workflow: cutadapter.sh -> mapping.sh -> vcf2fasta.sh -> get_calls_only.sh -> pango.sh -> fasta-prep.sh -> nextstrain.sh -> toytree.py
+If using Linux, please see note within the commented portion of fasta-prep.sh
