@@ -25,9 +25,29 @@ required named arguments:
                         `which conda` on your terminal, and copy the path up
                         until `anaconda` or `anaconda3`.
 
+
+Results should appear in a directory with the id name in it: id-results.
+Ie. if ID is 1234, results directory will be formatted: 1234-results.
+
+Within id-results directory there is:
+
+- lineage_report.csv: from pangolin
+
+- clade_assignment.tsv: for the sample produced from Nextstrain
+
+- id_map.pdf: world map produced from plotly
+
+- id_result.pdf: cropped world map
+
+- genetic_data: all genetic sequence data
+
+- nextstrain_results: raw nextstrain result data
+
+- tree: tree_raw.nwk is the main tree file used to plot phylogeny, clades.json is used to assign clades to branches and nodes, and tree-plot.pdf is a pdf of the phylogenetic tree
+
 If using Linux, please see note within the commented portion of fasta-prep.sh
 
-to update the pango-next submodule, follow these steps:
+To update the pango-next submodule, follow these steps:
 ``` 
 cd pango-next
 
