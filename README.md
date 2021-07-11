@@ -1,5 +1,6 @@
 # sars-pango
 
+
 usage: process-runner.py [-h] [--f1 F1] [--f2 F2] --id ID --conda_path
                          CONDA_PATH
 
@@ -23,3 +24,5 @@ required named arguments:
                         /Users/name/anaconda3. To locate your conda path, type
                         `which conda` on your terminal, and copy the path up
                         until `anaconda` or `anaconda3`.
+=======
+Overall workflow: cutadapter.sh -> mapping.sh -> vcf2fasta.sh -> get_calls_only.sh -> pango.sh -> fasta-prep.sh -> nextstrain.sh -> toytree.py
