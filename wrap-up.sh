@@ -7,6 +7,8 @@ rm -r pango-next/results
 mkdir $1-results; mkdir $1-results/genetic_data
 mv *$1_* $1-results/genetic_data
 mv *$1.* $1-results/genetic_data
+mv *.pdf $1-results
+
 mv nextstrain_results $1-results/nextstrain_results
 mv lineage_report.csv $1-results
 mv clade_assignment.tsv $1-results
