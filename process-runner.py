@@ -8,7 +8,7 @@ import sys
 import argparse
 import time
 
-# log = logging.getLogger("bioinformatix")
+log = logging.getLogger("bioinformatix")
 
 def run(a:list):
     
@@ -18,6 +18,16 @@ def run(a:list):
    
     return subprocess.run(args, shell=True, stdout=subprocess.PIPE)
     
+def nextrun(a:list):
+    
+    args = None
+    for j in a:
+    	args = ' '.join(a)
+    
+    args = args + f' > {id}_nextstrain.log'
+    
+    return subprocess.run(args, shell=True, stderr=subprocess.PIPE)
+           
 def bioinformatix(*args):
 	b = os.path.abspath('bioinformatics-pipeline.sh')
 	trun = 'bash ' + b
@@ -26,7 +36,7 @@ def bioinformatix(*args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Bio pipeline crashed: {proc.stderr}")
+		log.error(f"Bio pipeline crashed: {process.stderr}")
 		raise
 	return process.stdout
         
@@ -39,7 +49,7 @@ def pangolin(*args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Pangolin pipeline crashed: {proc.stderr}")
+		log.error(f"Pangolin pipeline crashed: {process.stderr}")
 		raise
 	return process.stdout
     
@@ -52,7 +62,7 @@ def clade(*args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Get clades crashed: {proc.stderr}")
+		log.error(f"Get clades crashed: {process.stderr}")
 		raise
 	return process.stdout        
 
@@ -63,10 +73,11 @@ def nextstrain(*args):
 	cmd = [trun] + [*args]
 		
 	try:
-		process = run(cmd)
+		process = nextrun(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Nextstrain runner crashed: {proc.stderr}")
-		raise
+ 		#log.error(f"Nextstrain runner crashed: {process.stderr}")
+		pass
+# 	print(process.stderr, file=open(f"{id}_nextstrainlog.txt", 'w'))
 	return process.stdout
 	
 def cleanup(args):
@@ -78,7 +89,7 @@ def cleanup(args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Cleanup crashed: {proc.stderr}")
+		log.error(f"Cleanup crashed: {process.stderr}")
 		raise
 	return process.stdout
 	
@@ -91,7 +102,7 @@ def toytree(*args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"Toytree crashed: {proc.stderr}")
+		log.error(f"Toytree crashed: {process.stderr}")
 		raise
 	return process.stdout	
 	
@@ -104,7 +115,7 @@ def worldmap(*args):
 	try:
 		process = run(cmd)
 	except subprocess.CalledProcessError:
-		log.error(f"World map figure crashed: {proc.stderr}")
+		log.error(f"World map figure crashed: {process.stderr}")
 		raise
 	return process.stdout	
 		
@@ -112,8 +123,8 @@ def full_run(id, f1, f2, conda):
 
 	print("\nStarting full pipeline run ...")
 	time.sleep(5)
-# 	
-# 	if f1 and f2 != None:
+	
+	# if f1 and f2 != None:
 # 	
 # 		print("\nBeginning bioinformatics pipeline\n")
 # 		bioinformatix(id, f1, f2, conda)
@@ -125,17 +136,17 @@ def full_run(id, f1, f2, conda):
 # 	time.sleep(3)
 # 	print("\nStarting pangolin analysis ...\n")
 # 	pangolin(id, conda)
-# 	
-	time.sleep(4)
-	print("\nExtracting virus clade ...")
-	clade(id, conda)
+#  	
+# 	time.sleep(4)
+# 	print("\nExtracting virus clade ...")
+# 	clade(id, conda)
 	
 	print("\nBeginning nextstrain pipeline\nHeads up! This may take awhile ...")
 	
-# 	time.sleep(4)
-# 	nextstrain(id, conda)
-# 	print("\nNextstrain pipeline completed!")
-# 	
+	time.sleep(4)
+	nextstrain(id, conda)
+	print("\nNextstrain pipeline completed!")
+	
 # 	print("\nCleaning up ...\n")
 # 	cleanup(id)
 # 	time.sleep(1)
@@ -144,21 +155,18 @@ def full_run(id, f1, f2, conda):
 	
 def visualizer(id, conda):
 	
-	print("\nStarting visualization: Phylogeneitcs ...")
+	print("\nStarting visualization: Phylogenetics ...")
 	time.sleep(3)
 	
 	toytree(id, conda)
 	loc = str(id)
 	
-	print("\nTree pdf now available: " + loc + "-results/tree/tree-plot.pdf")
-	
 	print("\nStarting visualization: World Map ...")
 	time.sleep(3)
 	
 	worldmap(id, conda)
-	print("\nWorld map pdf now available: " + loc + "-results/map.pdf")
 	
-	 
+	
 if __name__ == "__main__":
 	
 	parser = argparse.ArgumentParser(description="SARS-CoV-2 strain identification and phylogenetic analysis pipeline")
@@ -176,5 +184,9 @@ if __name__ == "__main__":
 	
 	full_run(id, fastq_1, fastq_2, conda)	
 	
-# 	visualizer(id, conda)
-	
+	# try:
+# 		visualizer(id, conda)
+# 	except FileNotFoundError:
+# 		print(f"tree_raw.nwk and clades.json files not found in the expected directory ({id}-results/tree). Check Nextstrain error log and search within directory for these files.")
+# 	
+# 	

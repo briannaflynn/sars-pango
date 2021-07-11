@@ -33,7 +33,7 @@ def get_clade_dict(json_path, tree):
 
   clade_dict = dict(zip(nodes, clades))
   clade_dict['SAMPLE'] = 'Sample'
-  
+
   return clade_dict
 
 def get_emap(dict, clades, color_list=['#b4d4f2', '#008080', '#0ff1ce', '#ff99ff', '#f0b456', '#5956f0', '#ff0019']):
@@ -54,10 +54,12 @@ def get_emap(dict, clades, color_list=['#b4d4f2', '#008080', '#0ff1ce', '#ff99ff
   return emap
 
 def names_generator(tree, sampleName = 'SAMPLE'):
+  
   keys = tree.get_tip_labels()
   k_index = keys.index(sampleName)
   empty = [''] * len(keys)
   empty[k_index] = sampleName
+  
   return empty
 
 def get_figure(tree, emap, pth = "./", name = "tree-plot", type = "pdf", height = 1400, width = 1000, tip_labels = False, tip_labels_align = False, tip_labels_style={"fill": "#262626","font-size": "18px","-toyplot-anchor-shift": "5px"}, ew = 2):
@@ -79,13 +81,13 @@ def get_figure(tree, emap, pth = "./", name = "tree-plot", type = "pdf", height 
 if __name__ == "__main__":
 
 	tre1 = toytree.tree(sars, tree_format=1)
-	
+
 	clade_dict = get_clade_dict(jso, tre1)
-	
+
 	c_uni = list(np.unique(np.array(list(clade_dict.values()))))
-	
+
 	emap = get_emap(clade_dict, c_uni, color_list = clist)
-	
+
 	names = names_generator(tre1)
 	
 	j = get_figure(tre1, emap, tip_labels = names)

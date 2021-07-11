@@ -8,7 +8,7 @@ bash fasta-prep.sh $1
 
 echo "Creating fasta sequence dataset for Nextstrain"
 # prepend it to the fasta with other sars-cov-2 viral genomes from genbank
-cat $1_consensus2.fasta ./pango-next/data/pruned_gb_sequences.fasta > $1_combined.fasta
+cat $1_consensus2.fasta ./pango-next/data/GISAID_3000.fasta ./pango-next/data/pruned_gb_sequences.fasta > $1_combined.fasta
 cp $1_combined.fasta combined_sequences.fasta
 mv combined_sequences.fasta pango-next/data/
 
