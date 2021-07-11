@@ -25,7 +25,10 @@ required named arguments:
                         `which conda` on your terminal, and copy the path up
                         until `anaconda` or `anaconda3`.
 
-
+```
+# example
+python process-runner --id 1234 --f1 1234_R1.fastq.gz --f2 1234_R2.fastq.gz --conda_path /Users/name/anaconda
+```
 Results should appear in a directory with the id name in it: id-results.
 Ie. if ID is 1234, results directory will be formatted: 1234-results.
 
