@@ -99,3 +99,14 @@ which conda
 
 /Users/garth/anaconda3/bin/conda
 ```
+If using Linux:
+
+```
+# Almost all the same instructions as for Mac OSX, except the path to the Anaconda.sh file
+# Copy and paste the command below and run with the Mac OSX instructions
+
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+
+```
+
+You can find more information about the Anaconda package installer here: https://www.anaconda.com/products/individual
