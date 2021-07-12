@@ -7,6 +7,7 @@ usage: process-runner.py [-h] [--f1 F1] [--f2 F2] --id ID --conda_path
                          CONDA_PATH
 
 optional arguments:
+
   -h, --help            show this help message and exit
 
   --f1 F1               Path to fastq.gz 1/2. Required for bioinformatics
@@ -20,6 +21,7 @@ optional arguments:
                         available in id-results directory)
 
 required named arguments:
+
   --id ID               Unique name used to label all files
 
   --conda_path CONDA_PATH
