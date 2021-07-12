@@ -109,3 +109,9 @@ wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 ```
 
 You can find more information about the Anaconda package installer here: https://www.anaconda.com/products/individual
+
+# Environment Setup
+
+After installing Anaconda, begin setting up all necessary environments. 
+
+Commands needed to set up all virtual environments can be found in the ./Installation/README/ directory in the form of three text files, each corresponding to the three virtual environments that will be used to run the pipeline. 
