@@ -29,6 +29,8 @@ required named arguments:
 # example
 python process-runner --id 1234 --f1 1234_R1.fastq.gz --f2 1234_R2.fastq.gz --conda_path /Users/name/anaconda
 ```
+# Results
+
 Results should appear in a directory with the id name in it: id-results.
 Ie. if ID is 1234, results directory will be formatted: 1234-results.
 
@@ -48,7 +50,7 @@ Within id-results directory there is:
 
 - tree: tree_raw.nwk is the main tree file used to plot phylogeny, clades.json is used to assign clades to branches and nodes, and tree-plot.pdf is a pdf of the phylogenetic tree
 
-If using Linux, please see note within the commented portion of fasta-prep.sh
+#### If using Linux, please see note within the commented portion of fasta-prep.sh
 
 To update the pango-next submodule, follow these steps:
 ``` 
@@ -72,3 +74,28 @@ Then run:
 git add pango-next
 
 git commit -m "update submodule commit message"
+```
+
+# Anaconda Installation
+
+if using Mac OSX: 
+
+``` 
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-MacOSX-x86_64.sh
+
+bash Anaconda3-2021.05-MacOSX-x86_64.sh
+
+# specify the path you want at the end or use the default path provided
+# default example:
+
+/Users/garth/anaconda3
+
+# (base) should appear next to your command line prompt indicating you're in the conda base environment
+# type the following command to check the install went through and anaconda is installed in the directory you expect
+
+which conda
+# this should print out the path to your conda binary file
+# example:
+
+/Users/garth/anaconda3/bin/conda
+```
