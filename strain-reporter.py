@@ -25,8 +25,18 @@ def full_report(fastq, fastq2, output, conda):
     """
     processrunner.full_run(output, fastq, fastq2, conda)
     processrunner.visualizer(output, conda)
-    processrunner.cleanup(output)
+    #processrunner.cleanup(output)
     logger.info("Done!")
+
+
+@cli.command('visuals')
+@click.argument('output')
+@click.argument('conda')
+def visuals(output, conda):
+    """
+    Visualizer only. Requires output from full_run prior
+    """
+    processrunner.visualizer(output, conda)
 
 if __name__ == '__main__':
     cli()
