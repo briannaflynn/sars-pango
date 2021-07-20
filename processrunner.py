@@ -75,10 +75,12 @@ def nextstrain(*args):
     cmd = [trun] + [*args]
 
     try:
-        process = nextrun(cmd)
+        process = run(cmd)
     except subprocess.CalledProcessError:
-        # log.error(f"Nextstrain runner crashed: {process.stderr}")
-        pass
+        
+        log.error(f"Nextstrain runner crashed: {process.stderr}")
+        raise
+        #pass
     # 	print(process.stderr, file=open(f"{id}_nextstrainlog.txt", 'w'))
     return process.stdout
 
