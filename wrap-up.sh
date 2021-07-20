@@ -16,3 +16,16 @@ mv clade_assignment.tsv $1-results
 mkdir $1-results/tree
 cp $1-results/nextstrain_results/global/tree_raw.nwk $1-results/tree
 cp $1-results/nextstrain_results/global/clades.json $1-results/tree
+
+#rm $1_consensus2.fasta
+rm $1_calls.vcf.gz.tmp.csi
+rm $1_calls.vcf.gz.tmp
+rm $1.vcf.tmp
+rm $1_sorted.bam.bai
+rm $1_sorted.bam
+rm $1.bam.tmp
+rm $1.sam.tmp
+rm $1_read2.trim.fastq.tmp
+rm $1_read1.trim.fastq.tmp
+rm $1_interleaved.tmp
+

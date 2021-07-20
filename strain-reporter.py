@@ -23,3 +23,10 @@ def full_report(fastq, fastq2, output, conda):
     OUTPUT - the name you would like to designate sample by in output files. Output will be in folder <output>-results
     CONDA - the path to your anaconda directory (e.g. /Users/myname/anaconda3)
     """
+    processrunner.full_run(output, fastq, fastq2, conda)
+    processrunner.visualizer(output, conda)
+    processrunner.cleanup(output)
+    logger.info("Done!")
+
+if __name__ == '__main__':
+    cli()

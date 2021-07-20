@@ -137,9 +137,9 @@ def full_run(id, f1, f2, conda):
     logger.debug("\nBeginning nextstrain pipeline\nHeads up! This may take awhile ...")
     nextstrain(id, conda)
     logger.debug("\nNextstrain pipeline completed!")
-    logger.debug("\nCleaning up ...\n")
-    cleanup(id)
-    logger.debug("Done!\n")
+    #logger.debug("\nCleaning up ...\n")
+    #cleanup(id)
+    #logger.debug("Done!\n")
 
 
 def visualizer(id, conda):
