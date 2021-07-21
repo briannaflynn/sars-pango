@@ -121,7 +121,7 @@ Within id-results directory there is:
 
 - clade_assignment.tsv: for the sample produced from Nextstrain
 
-- id_map.pdf: world map produced from plotly
+- id_worldmap.pdf: world map produced from plotly
 
 - id_result.pdf: cropped world map
 
