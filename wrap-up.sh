@@ -24,6 +24,9 @@ mv nextstrain_results $1-results/nextstrain_results
 mv lineage_report.csv $1-results
 mv clade_assignment.tsv $1-results
 
+mv $1_variants.vcf $1-results/genetic_data/
+mv _combined.fasta $1-results/genetic_data/
+
 mkdir $1-results/tree
 cp $1-results/nextstrain_results/global/tree_raw.nwk $1-results/tree
 cp $1-results/nextstrain_results/global/clades.json $1-results/tree
