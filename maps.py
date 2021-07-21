@@ -66,7 +66,7 @@ clade_df.replace({'countries':'mink'}, 'Netherlands', inplace = True)
 clade_df.replace({'countries':'England'}, 'United Kingdom', inplace = True)
 clade_df.replace({'countries':'Scotland'}, 'United Kingdom', inplace = True)
 
-sampleClade = pd.read_csv('clade_assignment.tsv', delimiter = "\t")
+sampleClade = pd.read_csv(f'{id}-results/clade_assignment.tsv', delimiter = "\t")
 clade = dict(sampleClade['clade'])
 clade = clade[0]
 
