@@ -129,5 +129,5 @@ Within id-results directory there is:
 
 - nextstrain_results: raw nextstrain result data
 
-- tree: tree_raw.nwk is the main tree file used to plot phylogeny, clades.json is used to assign clades to branches and nodes, and tree-plot.pdf is a pdf of the phylogenetic tree
+- tree: tree_raw.nwk is the main tree file used to plot phylogeny, clades.json is used to assign clades to branches and nodes, and tree-plot.pdf is a pdf of the phylogenetic tree. A static legend file, legends.pdf, is included in the sars-pango directory (not in the results directory). This legend describes the color of each clade as represented in tree-plot.pdf
 
