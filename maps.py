@@ -36,8 +36,8 @@ def get_clade_dict(json_path, tree):
   
   return clade_dict
   
-tree = toytree.tree("pango-next/results/global/tree_raw.nwk", tree_format=1)
-clade_dict = get_clade_dict("pango-next/results/global/clades.json", tree)
+tree = toytree.tree(f"{id}-result/tree/tree_raw.nwk", tree_format=1)
+clade_dict = get_clade_dict(f"{id}-result/tree/clades.json", tree)
 
 names = list(clade_dict.keys())
 
