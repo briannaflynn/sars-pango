@@ -78,6 +78,10 @@ After installing Anaconda, begin setting up all necessary environments.
 
 Commands needed to set up all virtual environments can be found in the ./Installation/README/ directory in the form of three text files, each corresponding to the three virtual environments that will be used to run the pipeline. 
 
+NOTE: 
+- After finishing the steps, conda's numpy will likely not work. Do conda AND pip uninstalls of numpy, and then a pip install of numpy.
+- Make sure the Git LfS files are populated, but this may need to be done manually from the google drive
+
 # Updating the pango-next submodule
 
 To update the pango-next submodule, follow these steps:
