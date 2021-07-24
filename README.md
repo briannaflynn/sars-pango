@@ -2,8 +2,10 @@
 
 
 ## SARS-CoV-2 strain identification and phylogenetic analysis pipeline
-NOTE: ALWAYS REMOVE EXISTING RESULTS DIRECTORY BEFORE RUNNING A SAMPLE WITH THE SAME ID
-
+NOTES: 
+- ALWAYS REMOVE EXISTING RESULTS DIRECTORY BEFORE RUNNING A SAMPLE WITH THE SAME ID
+- Runs on 2 cores by default
+- Do not run two jobs using the same --id in parallel
 
 usage: process-runner.py [-h] [--f1 F1] [--f2 F2] --id ID --conda_path
                          CONDA_PATH
