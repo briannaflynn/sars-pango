@@ -10,3 +10,5 @@ pip install toytree
 pip install plotly==5.1.0
 pip install -U kaleido
 pip install PyPDF2
+pip install weasyprint
+
