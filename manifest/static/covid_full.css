@@ -1,0 +1,421 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue";
+  margin-left: 10px;
+}
+
+img {
+    width: 43px;
+    height: 53px;
+}
+
+#lablogo {
+  margin-right: -20px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.frontsum {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+.header {
+  width: 1000px;
+}
+
+.lablogo {
+  width: 300px;
+  height: auto;
+  top: 50%;
+  position: absolute;
+  transform: translate(0,-50%);
+}
+
+.infohead {
+  padding-right: 0px;
+}
+
+#patientinfo {
+  padding-left: 5px;
+}
+
+#specimeninfo {
+  padding-left: 5px;
+}
+
+#providerinfo {
+  padding-left: 5px;
+}
+
+.infoheader {
+  background-color: #5087F6;
+  color: white;
+  padding-left: 5px;
+}
+
+.infobody {
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+.titlebar {
+  background-color: #5087F6;
+  color: white;
+  width: 98%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.headline {
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+.specialheadline {
+  margin-bottom: 25px;
+}
+
+.headertitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+  margin-right: 0px;
+  padding-right: 0px;
+  font-size: 32px;
+}
+
+#currentmeds {
+  width: 98%;
+  margin-left: 15px;
+  margin-right: 45px;
+  padding-right: 45px;
+  overflow: hidden;
+}
+
+#currentmeds .headline .specialheadline {
+  margin-left: 20px;
+}
+
+.no-currents {
+  width: 98%;
+  margin-left: 20px;
+  margin-right: 45px;
+  padding-right: 45px;
+}
+
+#legend {
+  width: 89%;
+  margin-left: 35px;
+  padding-left: 9px;
+  padding-right: 9px;
+  border: 1px solid grey;
+}
+
+#guidance-legend {
+  text-align: center;
+  padding-right: 30px;
+}
+
+.guidance-explain {
+  margin-bottom: 20px;
+}
+
+.guidance-explain-icon {
+  padding-right: 12px;
+  margin-right: 15px;
+}
+
+.guidance-explain-text {
+  font-size: 9pt;
+  margin-left: 20px;
+}
+
+#evidence-legend {
+  text-align: center;
+}
+
+.evidence-explain {
+  margin-left: 0px;
+  font-size: 9pt;
+}
+
+.fa-exclamation-triangle {
+  color: red;
+}
+
+.fa-info-circle {
+  color: black;
+}
+
+.fa-check-square {
+  color: green;
+}
+
+#kit-row, #patient {
+  border-bottom: 3px dotted gray;
+}
+.summary-table {
+  margin: 5% 2cm 0 2cm;
+}
+.summary-row {
+  margin: 0px 2cm 0px 2cm;
+  height: 120px;
+}
+
+.summary-icon {
+  display: inline-block;
+  background-color: #5087F6;
+  color: white;
+  text-align: center;
+  height: inherit;
+  width: 110px;
+  padding-top: 7px;
+  background-size: cover;
+}
+
+#kit.summary-icon {
+  background-color: lightcoral;
+}
+
+.summary-icon-text {
+  font-size: 20px;
+}
+
+.summary-row-field {
+  display: inline-block;
+  vertical-align: top;
+  height: inherit;
+  padding: 20px 50px 20px 50px; 
+  font-size: 30px;
+}
+
+.summary-row-field-subtext {
+  font-size: 15px;
+}
+
+#howto {
+  font-size: 11pt;
+  margin-top: 1cm;
+  margin-left: 1.5cm;
+  margin-right: 1.5cm;
+  margin-bottom: 2cm;
+}
+
+#explanation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+#medguide {
+  width: 92%;
+  margin-left: 30px;
+}
+
+.medtable {
+}
+
+th {
+  font-size: 12pt;
+  font-family: "Helvetica Neue";
+}
+
+thead {
+  border-bottom: 1px solid black;
+}
+
+.tablecathead {
+  padding-right: 20px;
+}
+
+.tableclasshead {
+  padding-right: 20px;
+}
+
+.fullcat {
+  border-bottom: 1px solid black;
+}
+
+.catname {
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.subclassname {
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.subclassone {
+
+}
+
+.subclasstwo {
+  
+}
+
+.subclassthree {
+  
+}
+
+.subclass {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid black;
+}
+
+.chemlist {
+ margin-bottom: 0px;
+}
+
+.onehead {
+  background-color: #b3ffbb;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.twohead {
+  background-color: #fdff80;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.threehead {
+  background-color: #ffcccc;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.chemlist {
+  list-style-type: none;
+}
+
+#sections {
+  width: 92%;
+  margin-left: 30px;
+}
+
+.sectionshead {
+
+}
+
+.sectionsbody {
+  width: 90%;
+}
+
+.section-explain {
+  font-size: 11pt;
+  margin-bottom: 30px;
+}
+
+.sections-header {
+  margin-top: 1cm;
+}
+
+#general {
+  width: 96%;
+  margin-left: 30px;
+  margin-right: 45px;
+  padding-right: 45px;
+}
+
+#disease {
+  width: 96%;
+  margin-left: 30px;
+  margin-right: 45px;
+  padding-right: 45px;
+}
+
+#legal {
+  display: inline-block;
+  width: 96%;
+  margin-left: 30px;
+  margin-right: 45px;
+  padding-right: 45px;
+}
+
+.med-recommendation {
+  margin-top: 50px;
+}
+
+.med-icon {
+  float: left;
+  height: inherit;
+  width: 10%;
+  
+}
+
+.med-header {
+  float: left;
+  font-size: 18px;
+  width: 90%;
+  border-bottom: 1px solid gray;
+}
+
+.med-header-brands {
+  margin-left: 15px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.med-body {
+  float: left;
+  width: 90%;
+  margin-left: 100px;
+}
+
+.med-body-supporting {
+  float: left;
+  width: 13%;
+  font-size: 11pt;
+}
+
+.med-body-content {
+  float: left;
+  width: 69%;
+  padding-bottom: 40px;
+  font-size: 11pt;
+}
+
+.med-body-category {
+  float: right;
+  width: 16.7%;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#genetics {
+  width: 96%;
+  margin-left: 30px;
+  margin-right: 45px;
+  padding-right: 45px;
+  font-size: 11pt;
+}
+
+table.genetics {
+  border-collapse: collapse;
+  border: 2px solid black;
+  margin: auto;
+}
+
+table.genetics td {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  font-weight: bold;
+}

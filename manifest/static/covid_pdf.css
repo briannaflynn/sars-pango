@@ -1,0 +1,85 @@
+.header {
+  position: running(header);
+}
+
+
+@page {
+  size: Letter;
+  margin-top: 7cm;
+  margin-bottom: 3cm;
+  margin-right: 0.5cm;
+  margin-left: 1cm;
+  
+  @bottom-right {
+    background: #5087F6;
+    content: counter(page) " of " counter(pages);
+    height: 1cm;
+    text-align: center;
+    width: 2cm; 
+    color: white;
+    margin-right: 1.12cm;
+  }
+
+  @bottom-center {
+    background: #5087F6;
+    content: '';
+    display: block;
+    height: .05cm;
+    opacity: .5;
+    width: 92%; 
+  }
+
+  @top-center {
+    content: element(header);
+  }
+}
+
+#front-summary {
+  break-after: always;
+}
+
+#howto {
+  break-after: always;
+}
+
+#legend {
+  break-inside: avoid;
+}
+
+#medguide {
+  break-before: always;
+  break-after: always;
+}
+
+.subclass {
+  break-inside: avoid;
+}
+
+
+#sections {
+  break-after: always;
+}
+
+.med-recommendation {
+  page-break-inside: avoid !important;
+}
+
+.med-body {
+  page-break-inside: avoid !important;
+}
+
+#disease {
+  break-after: always;
+}
+
+#general {
+  break-after: always;
+}
+
+#genetics {
+  break-after: always;
+}
+
+.subclass {
+  break-inside: avoid;
+}

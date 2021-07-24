@@ -1,0 +1,67 @@
+@page :first {
+  size: Letter; /* Change from the default size of A4 */
+  margin: 0px 0cm 0px 0cm; /* Set margin on each page */
+}
+
+@page {
+  size: Letter;
+  margin-top: 3cm;
+  margin-bottom: 3cm;
+  @bottom-right {
+    background: #5087F6;
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm; 
+    color: white;
+  }
+  @bottom-center {
+    background: #5087F6;
+    content: '';
+    display: block;
+    height: .05cm;
+    opacity: .5;
+    width: 100%; 
+  }
+  @bottom-left {
+    content: "Developed by PharmHand.org";
+    font-size: 15pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%; 
+    color: black;
+  } 
+
+  @top-center {
+    background: #5087F6;
+    content: 'GENERAL MEDICINE PANEL';
+    display: block;
+    height: 1cm;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 1cm;
+  }
+}
+
+#front-summary {
+  break-after: always;
+}
+
+#howto {
+  break-after: always;
+}
+
+#sections {
+  break-after: always;
+}
+
+.med-recommendation {
+  break-inside: avoid;
+}
+
+#general {
+  break-after: always;
+}

@@ -6,13 +6,10 @@ import jinja2
 import os
 import re
 from datetime import date
-from tables.settings import content_dir, STRANDS
 from operator import itemgetter
 from copy import deepcopy
 import logging
 import logging.config
-
-
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('main')
@@ -401,8 +398,8 @@ def med_json(data, pdf_name, lab_info):
     Input JSON-loaded dict, output PDF made from HTML template to file
     JSON file is given as string
     """
-    pdfcss_abspath = os.path.abspath("manifest/static/med_pdf.css")
-    css_abspath = os.path.abspath("manifest/static/med_pgx.css")
+    pdfcss_abspath = os.path.abspath("manifest/static/covid_pdf.css")
+    css_abspath = os.path.abspath("manifest/static/covid_full.css")
     logo_abspath = os.path.abspath(lab_info.logo_path)
     user_abspath = os.path.abspath("manifest/static/user.svg")
     vial_abspath = os.path.abspath("manifest/static/vial.svg")

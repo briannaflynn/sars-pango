@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Drug response report from a {{ kit_type }} kit.</title>
+    <title>SARS-Cov-2 Analysis</title>
     <!-- styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="file://{{ css_file }}">
@@ -59,44 +59,55 @@
             </h4>
         </div>
     </div>
-    <div id="currentmeds">
+    <div id="summary">
         <div class="headline">
-            <h1>Current Patient Medications</h1>
+            <h1>Summary</h1>
         </div>
-        {% if current_drugs|length == 0 %}
-            <p class="no-currents">No currently active medications to report on at this time. Due to a wide variety of brand names for some medications, please check the following table for the chemical names of specific medications of interest.</p>
-        {% else %}
-            {% for item in current_drugs %}
-            <p class="no-currents">Due to a wide variety of brand names for some medications, please check the following table for the chemical names of specific medications of interest.</p>
-            <div class="med-recommendation">
-                <div class="med-icon">
-                    <img src="file://{{ item.guidanceLevel }}" width="27px" height="30px">
-                </div>
-                <div class="med-header">
-                    <div class="med-header-name">
-                        <b>{{ item.name }}</b>
-                        <span class="med-header-brands">{{ item.brand_names }}</span>
-                    </div>
-                </div>
-                <div class="med-body">
-                    <div class="med-body-supporting">
-                        {{ item.genelist }} </br></br>
-                        Evidence:</br>
-                        {{ item.evidenceLevel }}
-                    </div>
-                    <div class="med-body-content">
-                        {{ item.phenotype }}</br></br>
-                        {{ item.description }}
-                    </div>
-                    <div class="med-body-category">
-                        {{ item.category }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        {% endif %}
+        <p class="summary-text">See further report pages for more detailed information about the results and quality controls.</p>
+        <table class="summarytable">
+            <tr>
+                <td>Results</td>
+                <td>{{ summary["results"] }}</td>
+            </tr>
+            <tr>
+                <td>Lineage</td>
+                <td>{{ summary["lineage"] }}</td>
+            </tr>
+            <tr>
+                <td>Taxon</td>
+                <td>{{ summary["taxon"] }}</td>
+            </tr>
+            <tr>
+                <td>Clade</td>
+                <td>{{ summary["clade"] }}</td>
+            </tr>
+            <tr>
+                <td>Parent clade</td>
+                <td>{{ summary["parent clade"] }}</td>
+            </tr>
+            <tr>
+                <td>Confidence</td>
+                <td>{{ summary["confidence"] }}</td>
+            </tr>
+            <tr>
+                <td>Quality control</td>
+                <td>{{ summary["qc"] }}</td>
+            </tr>
+            <tr>
+                <td>Other info</td>
+                <td>{{ summary["other"] }}</td>
+            </tr>
+            <tr>
+                <th>Gene</th>
+                <th>Patient info</th>
+                <th>Alleles tested</th>
+            </tr>
+        </table>
+        <p class="summary-end">The SARS-CoV-2 lineage was determined by calling genetic variants of the sample compared to a reference genome (1_NC_045512.2:1).
+            This is performed by the mapping of sequencing reads from the input sample to the reference genome,
+            then performing a filtration of low quality alignments or variations via metrics of coverage and other factors.
+            During this process, phylogeny and viral clade were also determined and presented within the report.</p>
     </div>
-    <br>
     <div id="legend" class="row justify-content-center no-gutters">
         <div id="guidance-levels" class="col-6 justify-content-center">
             <p id="guidance-legend"><b>Guidance levels</b></p>
