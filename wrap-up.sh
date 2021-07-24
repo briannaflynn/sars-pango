@@ -19,6 +19,7 @@ mv $1.sam.tmp $1-results/genetic_data/
 mv $1_read2.trim.fastq.tmp $1-results/genetic_data/
 mv $1_read1.trim.fastq.tmp $1-results/genetic_data/
 mv $1_interleaved.tmp $1-results/genetic_data/
+mv $1_combined.fasta $1-results/genetic_data/
 
 mv nextstrain_results $1-results/nextstrain_results
 mv lineage_report.csv $1-results
