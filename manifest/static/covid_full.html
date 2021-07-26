@@ -63,7 +63,7 @@
         <div class="headline">
             <h1>Summary</h1>
         </div>
-        <p class="summary-text">See further report pages for more detailed information about the results and quality controls.</p>
+        <p class="summary-text explainer">See further report pages for more detailed information about the results and quality controls.</p>
         <table class="summarytable">
             <tr>
                 <td>Results</td>
@@ -103,174 +103,95 @@
                 <th>Alleles tested</th>
             </tr>
         </table>
-        <p class="summary-end">The SARS-CoV-2 lineage was determined by calling genetic variants of the sample compared to a reference genome (1_NC_045512.2:1).
+        <p class="summary-end explainer">The SARS-CoV-2 lineage was determined by calling genetic variants of the sample compared to a reference genome (1_NC_045512.2:1).
             This is performed by the mapping of sequencing reads from the input sample to the reference genome,
             then performing a filtration of low quality alignments or variations via metrics of coverage and other factors.
             During this process, phylogeny and viral clade were also determined and presented within the report.</p>
     </div>
-    <div id="legend" class="row justify-content-center no-gutters">
-        <div id="guidance-levels" class="col-6 justify-content-center">
-            <p id="guidance-legend"><b>Guidance levels</b></p>
-                <div class="guidance-explain row">
-                    <div class="guidance-explain-icon col-2"><img src="file://{{ alert_icon_svg }}"></div>
-                    <div class="guidance-explain-text col-10"><u>Significant changes or risks.</u> The recommendation indicates important changes in efficacy, toxicity, or other 
-                    properties for the specified medication.</div>
-                </div>
-                <div class="guidance-explain row">
-                    <div class="guidance-explain-icon col-2"><img src="file://{{ info_icon_svg }}" ></i></div>
-                    <div class="guidance-explain-text col-10"><u>Possible treatment alterations.</u> There are alternate recommendations available for vigilance 
-                    in treatment or prescription dosage.</div>
-                </div>
-                <div class="guidance-explain row">
-                    <div class="guidance-explain-icon col-2"><img src="file://{{ normal_icon_svg }}" ></div>
-                    <div class="guidance-explain-text col-10">The sample's genotype shows no elevated risks or treatment-altering indicators
-                    for prescribing the medication according to standard practice.</div>
-                </div>
-        </div>
-        <div id="evidence-levels" class="col-5 justify-content-center">
-            <p id="evidence-legend" class="align-self-center"><b>Evidence levels</b></p>
-            <p>SIGNIFICANT:</p>
-            <p class="evidence-explain">Recommendations are supported by strong consensus among medical studies, and endorsed by medical societies and expert bodies, such as the CPIC and FDA. Treatment adjustments based on these findings is suggested.</p>
-            <p>LOW:</p>
-            <p class="evidence-explain">Recommendations are still supported by regulatory and expert bodies, but supporting studies may have conflicting results or insufficient associations with the finding.</p>
-        </div>
-    </div>
-
 <div id="tree">
     <div class="headline tree">
         <h1>Phylogeny</h1>
     </div>
-    <p class="treeexplain">The variation present in the sample allow insights into the origins of the virus. This phylogenetic tree uses the GSAID sample database (June 14 2021) and a model for estimating maximum likelihood phylogenies.</p>
-
-    <table>
-        <thead>
-            <tr>
-            <th class="theader tablecathead">Category</th>
-            <th class="theader tableclasshead">Class</th>
-            <th class="theader onehead">Standard Precautions</th>
-            <th class="theader twohead">Monitor for Adverse Effects</th>
-            <th class="theader threehead">Consider Alternative or See Specific Guidelines</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for category, subs in medication_guide.items()|sort %}
-                <tr class="fullcat">
-                    <td class="catname" rowspan="{{ subs.keys()|length + 1 }}"><b>{{ category }}</b></td>
-                    {% for dclass, chems in subs.items()|sort %}
-                    <tr class="subclass">
-                        <td class="subclassname">{{ dclass }}</td>
-                        <td class="subclassone onehead">
-                            <ul class="onelist chemlist">
-                                {% for chem in chems['1'] %}
-                                    <li>{{ chem }}</li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                        <td class="subclasstwo twohead">
-                            <ul class="twolist chemlist">
-                                {% for chem in chems['2'] %}
-                                    <li>{{ chem }}</li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                        <td class="subclassthree threehead">
-                            <ul class="threelist chemlist">
-                                {% for chem in chems['3'] %}
-                                    <li>{{ chem }}</li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                    </tr>         
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <p class="treeexplain explainer">The variation present in the sample allow insights into the origins of the virus. This phylogenetic tree uses the GSAID sample database (June 14 2021) and a model for estimating maximum likelihood phylogenies.</p>
+    <div class="phylocontainer">
+        <img class="phylo" src="file://{{ tree_path }}">
+    </div>
+    <div class="legendcontainer">
+        <img class="legend" src="file://{{ legend_path }}">
+    </div>
+<div id="prevalence">
+    <div class="headline prevalencehead">
+        <h1>Strain prevalence</h1>
+    </div>
+    <p class="prevalencexplain explainer">The following map represents the abundance of the sample’s strain among geographical regions. GenBank and GSAID data were used to create this map visualization. Strain prevalence in the map is a direct measurement of sample count in the databases.</p>
+    <div class="mapcontainer">
+        <img class="map" src="file://{{ map_path }}">
+    </div>
 </div>
-<div id="disease">
-    <div class="headline diseasehead">
-        <h1>Disease Risk Management</h1>
+<div id=variants>
+    <div class="headline variantshead">
+      <h1>Variant Table</h1>
     </div>
-    {% for item in diseases %}
-    <div class="med-recommendation">
-      <div class="med-icon">
-        <img src="file://{{ item.guidanceLevel }}">
-      </div>
-      <div class="med-header">
-        <div class="med-header-name">
-          <b>{{ item.name }}</b>
-        </div>
-      </div>
-      <div class="med-body">
-        <div class="med-body-supporting">
-          {{ item.genelist }} </br></br>
-          Evidence:</br>
-          {{ item.evidenceLevel }}
-        </div>
-        <div class="med-body-content">
-          {{ item.phenotype }}</br></br>
-          {{ item.description }}
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-</div>
-<div id="general">
-    <div class="headline generalhead">
-      <h1>General Medication Recommendations</h1>
-    </div>
-    {% for item in drugs %}
-    <div class="med-recommendation">
-      <div class="med-icon">
-        <img src="file://{{ item.guidanceLevel }}">
-      </div>
-      <div class="med-header">
-        <div class="med-header-name">
-          <b>{{ item.name }}</b>
-          <span class="med-header-brands">{{ item.brand_names }}</span>
-        </div>
-      </div>
-      <div class="med-body">
-        <div class="med-body-supporting">
-          {{ item.genelist }} </br></br>
-          Evidence:</br>
-          {{ item.evidenceLevel }}
-        </div>
-        <div class="med-body-content">
-          {{ item.phenotype }}</br></br>
-          {{ item.description }}
-        </div>
-        <div class="med-body-category">
-          {{ item.category }}
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-</div>
-<div id="genetics">
-    <div class="headline geneticshead">
-      <h1>Testing Details</h1>
-    </div>
-    <table class="genetics">
+    <p class="variantsexplain explainer">These are the variations from the reference genome discovered in the sample. The reference genome used is NC_045512.2 and the position represents the genomic position of the variation, aligned to the left-most base when necessary.</p>
+    <table class="variants table">
       <tr>
-        <th>Gene</th>
-        <th>Patient info</th>
-        <th>Alleles tested</th>
+        <th>Position</th>
+        <th>Reference</th>
+        <th>Sample</th>
       </tr>
       {% for key, value in gts.items()|sort %}
       <tr>
         <td>{{ key }}</td>
-        <td>{{ value["info"] }}</td>
-        <td>{{ value["alleles"] }}</td>
+        <td>{{ value["reference"] }}</td>
+        <td>{{ value["sample"] }}</td>
       </tr>
       {% endfor %}
     </table>
+</div>
+<div id="qc">
+    <div class="headline qchead">
+        <h1>Quality Control</h1>
+    </div>
+    <p class="qcexplain explainer">The following quality control measurements were taken on the input sample during software processing.</p>
+    <table class="qctable">
+        <tr>
+            <td>Passing reads</td>
+            <td>{{ qc["passing reads"] }}</td>
+        </tr>
+        <tr>
+            <td>Mean coverage</td>
+            <td>{{ qc["Mean coverage"] }}</td>
+        </tr>
+        <tr>
+            <td>>1X</td>
+            <td>{{ qc["1x"] }}</td>
+        </tr>
+        <tr>
+            <td>>5X</td>
+            <td>{{ qc["5x"] }}</td>
+        </tr>
+        <tr>
+            <td>>10X</td>
+            <td>{{ qc["10x"] }}</td>
+        </tr>
+        <tr>
+            <td>>100X</td>
+            <td>{{ qc["100x"] }}</td>
+        </tr>
+        <tr>
+            <td>Quality control</td>
+            <td>{{ summary["qc"] }}</td>
+        </tr>
+    </table>
+    <p class="qcpost explainer">The 1X, 5X, 10X, and 100X coverage measurements indicate the percentage of the reference genome targets covered at greater than or equal to the designated coverage number.</p>
 </div>
 <div id="legal">
     <div class="headline legalhead">
         <h1>Legal Information</h1>
     </div>
     <div class="sectionsbody">
+        <h2 class="section">Quality control</h2>
+        <p class="section-explain">{{ qc_methods }}</p>
         <h2 class="section">Disclaimer</h2>
         <p class="section-explain">{{ disclaimer }}</p>
         <h2 class="section">Methodology</h2>
@@ -284,7 +205,7 @@
         <p class="section-explain">
             <b>{{ recipient }}</b>
         </p>
-        <p class="section-explain">{{ approved }}</p>
+        <p class="section-explain">Approved by {{ approved }}</p>
         </div>
 </div>
 <!-- scripts -->
