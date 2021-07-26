@@ -4,11 +4,12 @@ import plotly.graph_objects as go
 # version 5.1.0
 import pandas as pd
 # version 1.1.5
-from PyPDF2 import PdfFileWriter, PdfFileReader
+#from PyPDF2 import PdfFileWriter, PdfFileReader
 # version version 1.26.0
 import sys
 import toytree
 import json
+from PIL import Image
 
 id = sys.argv[1]
 
@@ -125,10 +126,15 @@ fig.update_geos(fitbounds="locations")
 #uncomment to populate an interactive figure in web browser
 #fig.show()
 
-fig.write_image(f'{id}_map.pdf')
+fig.write_image(f'{id}_map.png')
+#For PNG
+im = Image.open(f'{id}_map.png')
+im.crop((0, 60, 800, 1200)).save(f'{id}_result.png', dpi=(200, 200))
 
-output = PdfFileWriter() 
-input = PdfFileReader(open(f'{id}_map.pdf', 'rb')) 
+#For PDFs
+"""
+output = PdfFileWriter()
+input = PdfFileReader(open(f'{id}_map.pdf', 'rb'))
 
 n = input.getNumPages()
 
@@ -141,3 +147,4 @@ for i in range(n):
 outputStream = open(f'{id}_result.pdf','wb') 
 output.write(outputStream) 
 outputStream.close()
+"""
