@@ -119,12 +119,9 @@ def covid_json(data, pdf_name, lab_info):
 
     templateLoader = jinja2.FileSystemLoader(searchpath="./manifest/static/")
     templateEnv = jinja2.Environment(loader=templateLoader)
-    TEMPLATE_FILE = "med_full.html"
+    TEMPLATE_FILE = "covid_full.html"
     template = templateEnv.get_template(TEMPLATE_FILE)
-    if len(lab_info.order_codes.keys()) > 0:
-        title = lab_info.order_codes[data["order_code"]]["title"]
-    else:
-        title = lab_info.report_title
+    title = lab_info.report_title
     output_html = template.render(css_file=css_abspath,
                                   lablogo=logo_abspath,
                                   first_name=data['first_name'],
@@ -150,8 +147,8 @@ def covid_json(data, pdf_name, lab_info):
                                   confident=lab_info.legal["confident"],
                                   recipient=lab_info.legal["recipient"],
                                   approved=lab_info.legal["approval"],
-                                  qc=data["qc"],
-                                  summary=data["summary"],
+                                  qc=qc,
+                                  summary=summary,
                                   gts=vardict,
                                   tree_path=tree_file,
                                   legend_path=legend_file,
