@@ -126,7 +126,7 @@ def pdf(demos, lab_info, output):
         "dob": loaded_demos[sample_name]["dob"],
         "gender": loaded_demos[sample_name]["gender"]
     }
-    covid_json(data, output+"-results/{}".format(sample_name), lab_info)
+    covid_json(data, output+"-results/{}".format(sample_name), loaded_lab)
 
 
 if __name__ == '__main__':

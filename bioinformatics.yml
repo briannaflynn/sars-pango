@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - anaconda
 dependencies:
   - _libgcc_mutex=0.1
   - bcftools=1.9
@@ -24,6 +25,7 @@ dependencies:
   - libssh2=1.9.0
   - ncurses=6.1
   - openssl
+  - panga=1.42.4
   - perl=5.26.2
   - pigz=2.4
   - pip=21.1.1

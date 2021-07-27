@@ -73,16 +73,16 @@ def process_results(pangolin, clades):
 
     with open(pangolin, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
-        if reader["status"] != "passed_qc":
-            raise RuntimeError("This sample {} did not pass internal qc for N content 50% and min length (10kbp), as required by the pangolin algorithm.")
-        output = {
-            "lineage": reader["lineage"],
-            "taxon": taxon,
-            "confidence": reader["ambiguity_score"],
-            "qc": "",
-            "other": re.sub("scorpio call:", "Functional alleles:", reader["note"])
-        }
-
+        for row in reader:
+            if row["status"] != "passed_qc":
+                raise RuntimeError("This sample {} did not pass internal qc for N content 50% and min length (10kbp), as required by the pangolin algorithm.")
+            output = {
+                "lineage": row["lineage"],
+                "taxon": taxon,
+                "confidence": row["ambiguity_score"],
+                "qc": "",
+                "other": re.sub("scorpio call:", "Functional alleles:", row["note"])
+            }
     return output
 
 
@@ -98,7 +98,7 @@ def covid_json(data, pdf_name, lab_info):
     logger.info("CSS {} LOGO {}".format(css_abspath, logo_abspath))
 
     #paths to sample files
-    sample_name = data["output"].split("\/")[-1]
+    sample_name = data["output"].split("/")[-1]
     results_dir = data["output"] + "-results"
     vcf_file = os.path.abspath(results_dir + "/genetic_data/" + sample_name + "_variants.vcf")
     map_file = os.path.abspath(results_dir + "/{}_result.png".format(sample_name))
@@ -106,12 +106,14 @@ def covid_json(data, pdf_name, lab_info):
     qc_file = os.path.abspath(results_dir + "/qc.json")
     legend_file = os.path.abspath("manifest/static/vertical_legend.png")
     results_file = os.path.abspath(results_dir + "/lineage_report.csv")
+    clades_file = os.path.abspath(results_dir + "/clade_assignment.tsv")
 
     #load qc json
     qc = json.load(open(qc_file, 'r'))
 
     #results summaries
-    summary = process_results(results_file)
+    print(clades_file)
+    summary = process_results(results_file, clades_file)
     summary["qc"] = qc["qc"]
 
     #load variants dict
