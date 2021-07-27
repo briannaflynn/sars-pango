@@ -42,10 +42,10 @@ def med_json(data, pdf_name, lab_info):
 
     #paths to sample files
     sample_name = data["output"].split("\/")[-1]
-    results_dir = data["output"]
+    results_dir = data["output"] + "-results"
     vcf_file = os.path.abspath(results_dir + "/genetic_data/" + sample_name + "_variants.vcf")
     map_file = os.path.abspath(results_dir + "/{}_result.png".format(sample_name))
-    tree_file = os.path.abspath(results_dir )
+    tree_file = os.path.abspath(results_dir + "/tree/tree-plot.png")
     #load drug content so we can add brand names and other info in
     drug_dir = content_dir + "/drugs"
     drug_content = {}

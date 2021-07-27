@@ -62,7 +62,7 @@ def names_generator(tree, sampleName = 'SAMPLE'):
   
   return empty
 
-def get_figure(tree, emap, pth = "./", name = "tree-plot", type = "pdf", height = 1400, width = 1000, tip_labels = False, tip_labels_align = False, tip_labels_style={"fill": "#262626","font-size": "18px","-toyplot-anchor-shift": "5px"}, ew = 2):
+def get_figure(tree, emap, pth = "./", name = "tree-plot", type = "png", height = 1400, width = 1000, tip_labels = False, tip_labels_align = False, tip_labels_style={"fill": "#262626","font-size": "18px","-toyplot-anchor-shift": "5px"}, ew = 2):
   
   ecolors = tree.get_edge_values_mapped(emap)
   elabels =  tree.get_edge_values('idx')
@@ -75,6 +75,8 @@ def get_figure(tree, emap, pth = "./", name = "tree-plot", type = "pdf", height 
     toyplot.pdf.render(canvas, fname)
   elif type == "svg":
     toyplot.svg.render(canvas, fname)
+  elif type == "png":
+    toyplot.png.render(canvas, fname)
   
   return tree.draw(height = height, width = width, tip_labels = tip_labels, tip_labels_align = tip_labels_align, tip_labels_style=tip_labels_style, edge_colors = ecolors, edge_widths = ewidths)
 	 
