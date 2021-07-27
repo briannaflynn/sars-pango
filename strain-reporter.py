@@ -3,6 +3,7 @@ import re
 import csv
 import importlib
 import processrunner
+from manifest import covid_json
 import logging
 import logging.config
 logging.config.fileConfig('logging.conf')
@@ -125,8 +126,7 @@ def pdf(demos, lab_info, output):
         "dob": loaded_demos[sample_name]["dob"],
         "gender": loaded_demos[sample_name]["gender"]
     }
-
-
+    covid_json(data, output+"-results/{}".format(sample_name), lab_info)
 
 
 if __name__ == '__main__':
