@@ -5,6 +5,7 @@ import json
 import jinja2
 import os
 import re
+import csv
 from datetime import date
 from operator import itemgetter
 from copy import deepcopy
@@ -13,6 +14,9 @@ import logging.config
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('main')
+
+taxon = "NC_045512.2"
+
 
 def sortAlleles(genotype):
     """
@@ -54,9 +58,35 @@ def process_vcf(vcf):
             }
     return output
 
+def process_results(pangolin, clades):
+    """
+    Parse the file called "lineage_report.csv" in results folder
+    Return dict
+    """
+    output = {}
+    with open(clades) as c:
+        for line in c.readlines():
+            line = line.strip()
+            line = line.split("\t")
+            output["clade"] = line[1]
+            output["parent clade"] = line[2]
+
+    with open(pangolin, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        if reader["status"] != "passed_qc":
+            raise RuntimeError("This sample {} did not pass internal qc for N content 50% and min length (10kbp), as required by the pangolin algorithm.")
+        output = {
+            "lineage": reader["lineage"],
+            "taxon": taxon,
+            "confidence": reader["ambiguity_score"],
+            "qc": "",
+            "other": re.sub("scorpio call:", "Functional alleles:", reader["note"])
+        }
+
+    return output
 
 
-def med_json(data, pdf_name, lab_info):
+def covid_json(data, pdf_name, lab_info):
     """
 
     Input JSON-loaded dict, output PDF made from HTML template to file
@@ -73,8 +103,16 @@ def med_json(data, pdf_name, lab_info):
     vcf_file = os.path.abspath(results_dir + "/genetic_data/" + sample_name + "_variants.vcf")
     map_file = os.path.abspath(results_dir + "/{}_result.png".format(sample_name))
     tree_file = os.path.abspath(results_dir + "/tree/tree-plot.png")
-    #qc_file = os.path.abspath(results_dir + "/qc.json")
+    qc_file = os.path.abspath(results_dir + "/qc.json")
     legend_file = os.path.abspath("manifest/static/vertical_legend.png")
+    results_file = os.path.abspath(results_dir + "/lineage_report.csv")
+
+    #load qc json
+    qc = json.load(open(qc_file, 'r'))
+
+    #results summaries
+    summary = process_results(results_file)
+    summary["qc"] = qc["qc"]
 
     #load variants dict
     vardict = process_vcf(vcf_file)
@@ -114,7 +152,7 @@ def med_json(data, pdf_name, lab_info):
                                   approved=lab_info.legal["approval"],
                                   qc=data["qc"],
                                   summary=data["summary"],
-                                  gts=variants,
+                                  gts=vardict,
                                   tree_path=tree_file,
                                   legend_path=legend_file,
                                   map_path=map_file

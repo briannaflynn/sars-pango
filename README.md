@@ -5,7 +5,7 @@
 NOTES: 
 - ALWAYS REMOVE EXISTING RESULTS DIRECTORY BEFORE RUNNING A SAMPLE WITH THE SAME ID
 - Runs on 2 cores by default
-- Do not run two jobs using the same --id in parallel
+- At the moment do not run multiple instances of this program at the same time
 
 usage: process-runner.py [-h] [--f1 F1] [--f2 F2] --id ID --conda_path
                          CONDA_PATH
