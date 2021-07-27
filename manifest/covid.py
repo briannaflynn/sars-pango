@@ -32,6 +32,29 @@ def process_vcf(vcf):
     Parse VCF file and run anything necessary to produce the variants table:
     Dict with position as key and value as dict {'reference': str, 'sample': str}
     """
+    output = {}
+    with open(vcf, 'r') as f:
+        for line in f.readlines():
+            if line.startswith("#"):
+                continue
+            line = line.strip()
+            line = line.split()
+            position = line[1]
+            reference = line[3]
+            alleles = [reference]
+            alleles.extend(line[4].split(","))
+            gt = line[-1].split(":")[0]
+            sample = alleles[int(gt)]
+            if position in output.keys():
+                raise KeyError("Position {} already existed when trying to create variants table. You may need to look at the VCF for an edge case.")
+
+            output[position] = {
+                "reference": reference,
+                "sample": sample
+            }
+    return output
+
+
 
 def med_json(data, pdf_name, lab_info):
     """
@@ -53,6 +76,8 @@ def med_json(data, pdf_name, lab_info):
     #qc_file = os.path.abspath(results_dir + "/qc.json")
     legend_file = os.path.abspath("manifest/static/vertical_legend.png")
 
+    #load variants dict
+    vardict = process_vcf(vcf_file)
 
     templateLoader = jinja2.FileSystemLoader(searchpath="./manifest/static/")
     templateEnv = jinja2.Environment(loader=templateLoader)
