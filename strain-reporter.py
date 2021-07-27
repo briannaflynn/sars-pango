@@ -102,18 +102,30 @@ def visuals(output, conda):
 @cli.command('pdf')
 @click.argument('demos', type=click.Path())
 @click.argument('lab_info')
-@click.argument('results_folder')
-def pdf(demos, lab_info, results_folder):
+@click.argument('output')
+def pdf(demos, lab_info, output):
     """
     Run only the pdf for a given sample
-    Requires that there be a results folder named after the accession ID in format "{ID}-results"
+    Requires that the output be given as if it were the sample name from the full_report function, NOT the full folder name Example: scratch/SAMPLEID
+
+    Example: strain-reporter.py scratch/example_demos.csv clients.sample scratch/SAMPLE
     """
     loaded_demos = demos_load(demos)
     loaded_lab = lab_load(lab_info)
-    folder_name = re.sub(".+\/", "", results_folder)
-    sample_name = re.sub("-results", "", folder_name)
+    sample_name = re.sub(".+\/", "", output)
     if sample_name not in loaded_demos.keys():
         raise KeyError("The sample ID {} was expected to be found in the demographics, and was not".format(sample_name))
+    data = {
+        "output": output,
+        "first_name": loaded_demos[sample_name]["first"],
+        "last_name": loaded_demos[sample_name]["last"],
+        "collection_date": loaded_demos[sample_name]["collection_date"],
+        "received_date": loaded_demos[sample_name]["received_date"],
+        "id": sample_name,
+        "dob": loaded_demos[sample_name]["dob"],
+        "gender": loaded_demos[sample_name]["gender"]
+    }
+
 
 
 
