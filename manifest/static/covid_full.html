@@ -150,32 +150,32 @@
     <p class="qcexplain explainer">The following quality control measurements were taken on the input sample during software processing.</p>
     <table class="qctable">
         <tr>
-            <td>Passing reads</td>
+            <td class="left db">Passing reads</td>
             <td>{{ qc["passing reads"] }}</td>
         </tr>
         <tr>
-            <td>Mean coverage</td>
+            <td class="left db">Mean coverage</td>
             <td>{{ qc["mean coverage"] }}</td>
         </tr>
         <tr>
-            <td>>1X</td>
-            <td>{{ qc["1x"] }}</td>
+            <td class="left db">>1X</td>
+            <td class="right">{{ qc["1x"] }}</td>
         </tr>
         <tr>
-            <td>>5X</td>
-            <td>{{ qc["5x"] }}</td>
+            <td class="left db">>5X</td>
+            <td class="right">{{ qc["5x"] }}</td>
         </tr>
         <tr>
-            <td>>10X</td>
-            <td>{{ qc["10x"] }}</td>
+            <td class="left db">>10X</td>
+            <td class="right">{{ qc["10x"] }}</td>
         </tr>
         <tr>
-            <td>>100X</td>
-            <td>{{ qc["100x"] }}</td>
+            <td class="left db">>100X</td>
+            <td class="right">{{ qc["100x"] }}</td>
         </tr>
         <tr>
-            <td>Quality control</td>
-            <td>{{ summary["qc"] }}</td>
+            <td class="left w">Quality control</td>
+            <td class="right">{{ summary["qc"] }}</td>
         </tr>
     </table>
     <p class="qcpost explainer">The 1X, 5X, 10X, and 100X coverage measurements indicate the percentage of the reference genome targets covered at greater than or equal to the designated coverage number.</p>
@@ -185,15 +185,15 @@
         <h1>Legal Information</h1>
     </div>
     <div class="sectionsbody">
-        <h2 class="section">Disclaimer</h2>
+        <h2 class="legalsection">Disclaimer</h2>
         <p class="section-explain">{{ disclaimer }}</p>
-        <h2 class="section">Methodology</h2>
+        <h2 class="legalsection">Methodology</h2>
         <p class="section-explain">{{ method }}</p>
-        <h2 class="section">Limitations</h2>
-        <p class="section-explain">{{ limitations }}</p>
-        <h2 class="section">Laboratory certification</h2>
+        <h2 class="legalsection">Limitations</h2>
+        <p class="legalsection-explain">{{ limitations }}</p>
+        <h2 class="legalsection">Laboratory certification</h2>
         <p class="section-explain">{{ cert }}</p>
-        <h2 class="section">Confidentiality notice</h2>
+        <h2 class="legalsection">Confidentiality notice</h2>
         <p class="section-explain">{{ confident }}</p>
         <p class="section-explain">
             <b>{{ recipient }}</b>

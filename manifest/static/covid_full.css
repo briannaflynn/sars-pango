@@ -163,6 +163,15 @@ img {
   margin: auto;
 }
 
+.qctable {
+  width: 50%;
+  vertical-align: center;
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
 #currentmeds .headline .specialheadline {
   margin-left: 20px;
 }
