@@ -130,6 +130,24 @@ img {
   background-color: #F6F6F6;
 }
 
+.treecontainer {
+  width: 100%;
+  height: 1000px;
+}
+
+.phylo {
+  height: 1000px;
+  float: left;
+  width: 700px;
+}
+
+.legend {
+  height: 1000px;
+  float: right;
+  width: 170px;
+}
+
+
 #currentmeds .headline .specialheadline {
   margin-left: 20px;
 }
