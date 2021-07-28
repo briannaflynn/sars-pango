@@ -9,14 +9,14 @@ NOTES:
 
 There are two ways to run the program - strain-reporter.py is the recommended and is how to generate a PDF report. But process-runner.py does also have its own CLI for individual components of the report.
 
-###Using strain-reporter.py
+### Using strain-reporter.py
 
 NOTES:
 - If you specify a path in the output param, make sure the final part of the address is the accession ID that would be found 
 in the demographics file you are uploading alongside it
   
 
-###Using process-runner.py
+### Using process-runner.py
 
 usage: process-runner.py [-h] [--f1 F1] [--f2 F2] --id ID --conda_path
                          CONDA_PATH
