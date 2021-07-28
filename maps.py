@@ -125,11 +125,11 @@ fig.update_geos(fitbounds="locations")
 
 #uncomment to populate an interactive figure in web browser
 #fig.show()
-
-fig.write_image(f'{id}_map.png')
+scale=4
+fig.write_image(f'{id}_map.png', scale=scale)
 #For PNG
 im = Image.open(f'{id}_map.png')
-im.crop((0, 60, 800, 1200)).save(f'{id}_result.png', dpi=(200, 200))
+im.crop((66*scale, 100*scale, 1200*scale, 450*scale)).save(f'{id}_result.png', dpi=(300, 300))
 
 #For PDFs
 """

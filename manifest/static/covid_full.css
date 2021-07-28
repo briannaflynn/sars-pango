@@ -98,6 +98,10 @@ img {
   margin-left: 23px;
 }
 
+.explainer {
+  font-size: 15pt;
+}
+
 .summarytable {
   width: 65%;
   vertical-align: center;
@@ -145,6 +149,11 @@ img {
   height: 1000px;
   float: right;
   width: 170px;
+}
+
+.map {
+ width: 1600px;
+ height: 500px;
 }
 
 
@@ -271,8 +280,6 @@ img {
   margin-left: 30px;
 }
 
-.medtable {
-}
 
 th {
   font-size: 12pt;
@@ -454,7 +461,7 @@ thead {
   font-size: 11pt;
 }
 
-table.genetics {
+.genetics {
   border-collapse: collapse;
   border: 2px solid black;
   margin: auto;
