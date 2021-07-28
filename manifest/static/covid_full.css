@@ -93,12 +93,41 @@ img {
   font-size: 32px;
 }
 
-#currentmeds {
-  width: 98%;
-  margin-left: 15px;
-  margin-right: 45px;
-  padding-right: 45px;
-  overflow: hidden;
+.section {
+  width: 90%;
+  margin-left: 23px;
+}
+
+.summarytable {
+  width: 65%;
+  vertical-align: center;
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.left {
+  text-align: center;
+  width: 210px;
+  height: 45px;
+  border: 6px solid white;
+}
+
+.right {
+  padding-left: 12px;
+}
+
+.lb {
+  background-color: #4CA8F8;
+}
+
+.db {
+  background-color: #718FF3;
+}
+
+.w {
+  background-color: #F6F6F6;
 }
 
 #currentmeds .headline .specialheadline {
@@ -163,6 +192,9 @@ img {
 #kit-row, #patient {
   border-bottom: 3px dotted gray;
 }
+
+
+
 .summary-table {
   margin: 5% 2cm 0 2cm;
 }
@@ -303,6 +335,7 @@ thead {
   width: 92%;
   margin-left: 30px;
 }
+
 
 .sectionshead {
 

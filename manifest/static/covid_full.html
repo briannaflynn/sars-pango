@@ -59,39 +59,45 @@
             </h4>
         </div>
     </div>
-    <div id="summary">
+    <div id="summary" class="section">
         <div class="headline">
             <h1>Summary</h1>
         </div>
         <p class="summary-text explainer">See further report pages for more detailed information about the results and quality controls.</p>
         <table class="summarytable">
-            <tr>
-                <td>Lineage</td>
-                <td>{{ summary["lineage"] }}</td>
+            <tr class="summaryrow">
+                <td class="left lb">Lineage</td>
+                <td class="right">{{ summary["lineage"] }}</td>
             </tr>
-            <tr>
-                <td>Taxon</td>
-                <td>{{ summary["taxon"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left lb">Taxon</td>
+                <td class="right">{{ summary["taxon"] }}</td>
             </tr>
-            <tr>
-                <td>Clade</td>
-                <td>{{ summary["clade"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left db">Clade</td>
+                <td class="right">{{ summary["clade"] }}</td>
             </tr>
-            <tr>
-                <td>Parent clade</td>
-                <td>{{ summary["parent clade"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left db">Parent clade</td>
+                <td class="right">{{ summary["parent clade"] }}</td>
             </tr>
-            <tr>
-                <td>Confidence</td>
-                <td>{{ summary["confidence"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left w">Confidence</td>
+                <td class="right">{{ summary["confidence"] }}</td>
             </tr>
-            <tr>
-                <td>Quality control</td>
-                <td>{{ summary["qc"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left w">Quality control</td>
+                <td class="right">{{ summary["qc"] }}</td>
             </tr>
-            <tr>
-                <td>Other info</td>
-                <td>{{ summary["other"] }}</td>
+            <tr class="summaryspacer"></tr>
+            <tr class="summaryrow">
+                <td class="left w">Other info</td>
+                <td class="right">{{ summary["other"] }}</td>
             </tr>
         </table>
         <p class="summary-end explainer">The SARS-CoV-2 lineage was determined by calling genetic variants of the sample compared to a reference genome (1_NC_045512.2:1).
@@ -99,7 +105,7 @@
             then performing a filtration of low quality alignments or variations via metrics of coverage and other factors.
             During this process, phylogeny and viral clade were also determined and presented within the report.</p>
     </div>
-<div id="tree">
+<div id="tree" class="section">
     <div class="headline tree">
         <h1>Phylogeny</h1>
     </div>
@@ -110,7 +116,7 @@
     <div class="legendcontainer">
         <img class="legend" src="file://{{ legend_path }}">
     </div>
-<div id="prevalence">
+<div id="prevalence" class="section">
     <div class="headline prevalencehead">
         <h1>Strain prevalence</h1>
     </div>
@@ -119,7 +125,7 @@
         <img class="map" src="file://{{ map_path }}">
     </div>
 </div>
-<div id=variants>
+<div id="variants" class="section">
     <div class="headline variantshead">
       <h1>Variant Table</h1>
     </div>
@@ -139,7 +145,7 @@
       {% endfor %}
     </table>
 </div>
-<div id="qc">
+<div id="qc" class="section">
     <div class="headline qchead">
         <h1>Quality Control</h1>
     </div>
@@ -176,7 +182,7 @@
     </table>
     <p class="qcpost explainer">The 1X, 5X, 10X, and 100X coverage measurements indicate the percentage of the reference genome targets covered at greater than or equal to the designated coverage number.</p>
 </div>
-<div id="legal">
+<div id="legal" class="section">
     <div class="headline legalhead">
         <h1>Legal Information</h1>
     </div>
