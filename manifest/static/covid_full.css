@@ -156,6 +156,12 @@ img {
  height: 500px;
 }
 
+.variants {
+  width: 66%;
+  vertical-align: center;
+  text-align: center;
+  margin: auto;
+}
 
 #currentmeds .headline .specialheadline {
   margin-left: 20px;
@@ -221,7 +227,6 @@ img {
 }
 
 
-
 .summary-table {
   margin: 5% 2cm 0 2cm;
 }
@@ -261,25 +266,11 @@ img {
   font-size: 15px;
 }
 
-#howto {
-  font-size: 11pt;
-  margin-top: 1cm;
-  margin-left: 1.5cm;
-  margin-right: 1.5cm;
-  margin-bottom: 2cm;
-}
 
 #explanation {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
-
-#medguide {
-  width: 92%;
-  margin-left: 30px;
-}
-
 
 th {
   font-size: 12pt;
