@@ -14,6 +14,7 @@ dependencies:
   - certifi=2021.5.30
   - curl=7.69.1
   - cutadapt=1.18
+  - ghostscript=9.54.0
   - htslib=1.9
   - krb5=1.17.1
   - ld_impl_linux-64

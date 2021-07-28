@@ -16,6 +16,7 @@ pip install jinja2
 Do this after all installation for the env is completed:
 - It is likely that the v1.14 of cairo will install instead of v1.16 on mac OS. You will have to go to https://anaconda.org/anaconda/cairo/files
 and download the necessary files.
+- brew install bedtools or just go get it
 
 
 
