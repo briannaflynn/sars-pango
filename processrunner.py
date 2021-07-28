@@ -152,6 +152,20 @@ def visualizer(id, conda):
     worldmap(id, conda)
 
 
+def qc(bam_file):
+    logger.debug("Starting BAM coverage analysis QC ... ")
+    b = os.path.abspath('qc.sh')
+    trun = 'bash ' + b
+    cmd = [trun] + [bam_file]
+
+    try:
+        process = run(cmd)
+    except subprocess.CalledProcessError:
+        logger.error(f"QC attempt crashed: {process.stderr}")
+        raise
+    return process.stdout
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SARS-CoV-2 strain identification and phylogenetic analysis pipeline")
     parser.add_argument('--f1', action='store', type=str,

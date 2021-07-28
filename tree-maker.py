@@ -67,7 +67,7 @@ def names_generator(tree, sampleName='SAMPLE'):
 
 def get_figure(tree, emap, pth="./", name="tree-plot", type="png", height=1400, width=1000, tip_labels=False,
                tip_labels_align=False,
-               tip_labels_style={"fill": "#262626", "font-size": "18px", "-toyplot-anchor-shift": "5px"}, ew=2):
+               tip_labels_style={"fill": "#262626", "font-size": "24px", "-toyplot-anchor-shift": "5px"}, ew=3):
     ecolors = tree.get_edge_values_mapped(emap)
     elabels = tree.get_edge_values('idx')
     ewidths = [ew for i in elabels]

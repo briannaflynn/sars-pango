@@ -88,6 +88,22 @@ def full_report(demos, lab_info, fastq, fastq2, output, conda):
     processrunner.full_run(output, fastq, fastq2, conda)
     processrunner.visualizer(output, conda)
     #processrunner.cleanup(output)
+    logger.info("Generating PDF")
+    sample_name = re.sub(".+\/", "", output)
+    processrunner.qc(output + "-results/genetic_data/{}_sorted.bam".format(sample_name))
+    if sample_name not in loaded_demos.keys():
+        raise KeyError("The sample ID {} was expected to be found in the demographics, and was not".format(sample_name))
+    data = {
+        "output": output,
+        "first_name": loaded_demos[sample_name]["first"],
+        "last_name": loaded_demos[sample_name]["last"],
+        "collection_date": loaded_demos[sample_name]["collection_date"],
+        "received_date": loaded_demos[sample_name]["received_date"],
+        "id": sample_name,
+        "dob": loaded_demos[sample_name]["dob"],
+        "gender": loaded_demos[sample_name]["gender"]
+    }
+    covid_json(data, output + "-results/{}".format(sample_name), loaded_lab)
     logger.info("Done!")
 
 
@@ -127,6 +143,15 @@ def pdf(demos, lab_info, output):
         "gender": loaded_demos[sample_name]["gender"]
     }
     covid_json(data, output+"-results/{}".format(sample_name), loaded_lab)
+
+@cli.command('qc')
+@click.argument('bam', type=click.Path())
+def qc(bam):
+    """
+    Test the coverage QC functions on a given bam file
+    """
+    processrunner.qc(bam)
+
 
 
 if __name__ == '__main__':

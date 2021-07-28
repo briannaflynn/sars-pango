@@ -34,19 +34,24 @@
   }
 }
 
-#front-summary {
+#summary {
   break-after: always;
 }
 
-#howto {
+#tree {
   break-after: always;
 }
 
-#legend {
-  break-inside: avoid;
+#prevalence {
+  break-before: always;
+  break-after: always;
 }
 
-#medguide {
+#variants {
+  break-before: always;
+  break-after: always;
+}
+#qc {
   break-before: always;
   break-after: always;
 }

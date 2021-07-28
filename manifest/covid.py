@@ -64,12 +64,6 @@ def process_results(pangolin, clades):
     Return dict
     """
     output = {}
-    with open(clades) as c:
-        for line in c.readlines():
-            line = line.strip()
-            line = line.split("\t")
-            output["clade"] = line[1]
-            output["parent clade"] = line[2]
 
     with open(pangolin, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -83,6 +77,14 @@ def process_results(pangolin, clades):
                 "qc": "",
                 "other": re.sub("scorpio call:", "Functional alleles:", row["note"])
             }
+
+    with open(clades) as c:
+        for line in c.readlines():
+            line = line.strip()
+            line = line.split("\t")
+            output["clade"] = line[1]
+            output["parent clade"] = line[2]
+
     return output
 
 
@@ -103,7 +105,7 @@ def covid_json(data, pdf_name, lab_info):
     vcf_file = os.path.abspath(results_dir + "/genetic_data/" + sample_name + "_variants.vcf")
     map_file = os.path.abspath(results_dir + "/{}_result.png".format(sample_name))
     tree_file = os.path.abspath(results_dir + "/tree/tree-plot.png")
-    qc_file = os.path.abspath(results_dir + "/qc.json")
+    qc_file = os.path.abspath(results_dir + "/genetic_data/" + sample_name + "_sorted.bam.qc.json")
     legend_file = os.path.abspath("manifest/static/vertical_legend.png")
     results_file = os.path.abspath(results_dir + "/lineage_report.csv")
     clades_file = os.path.abspath(results_dir + "/clade_assignment.tsv")
